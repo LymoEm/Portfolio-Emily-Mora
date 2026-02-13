@@ -12,7 +12,43 @@
   <div class="hero-content">
     <img src="assets/images/Emily.png" alt="Foto de Emily" class="profile-img">
     <h1>Emily Mora Llanos</h1>
-    <h2>Ingeniería en Multimedia</h2>
+    <h2><span id="texto-maquina"></span></h2>
+    <script>
+    const texto = "Ingeniería en Multimedia";
+    const velocidadEscritura = 80;     // Velocidad al escribir
+    const velocidadBorrado = 40;       // Velocidad al borrar
+    const pausaAntesBorrar = 1500;     // Pausa antes de empezar a borrar
+    
+    let indice = 0;
+    let borrando = false;
+    
+    function efectoMaquina() {
+      const elemento = document.getElementById("texto-maquina");
+    
+      if (!borrando) {
+        elemento.textContent = texto.substring(0, indice + 1);
+        indice++;
+    
+        if (indice === texto.length) {
+          borrando = true;
+          setTimeout(efectoMaquina, pausaAntesBorrar);
+          return;
+        }
+      } else {
+        elemento.textContent = texto.substring(0, indice - 1);
+        indice--;
+    
+        if (indice === 0) {
+          borrando = false;
+        }
+      }
+    
+      setTimeout(efectoMaquina, borrando ? velocidadBorrado : velocidadEscritura);
+    }
+    
+    efectoMaquina();
+    </script>
+
     <p style="text-align: justify; max-width: 580px; margin: 0 auto 20px; line-height: 1.5;">
       Estudiante de Ingeniería en Multimedia con formación en desarrollo web, animación, 
       modelado y diseño visual. Me caracterizo por mi capacidad de adaptación en equipos 
