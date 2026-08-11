@@ -15,1847 +15,9 @@
     content="Portafolio de Emily Mora Llanos, Ingeniera en Multimedia enfocada en UX/UI, interacción y experiencias digitales."
   >
 
-  <title>Emily Mora Llanos | Portafolio</title>
+  <title>Emily Mora Llanos · Portafolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-
-    /* =====================================================
-       VARIABLES
-    ====================================================== */
-
-    :root {
-
-      --bg: #071724;
-      --bg-soft: #0b2030;
-      --bg-section: #0a1d2c;
-
-      --card: #102b40;
-      --card-light: #153c57;
-
-      --text: #f1fbff;
-      --muted: #a9c2d1;
-
-      --blue: #55d9ff;
-      --blue-light: #78e4ff;
-      --blue-dark: #20a9d6;
-
-      --turquoise: #43e0d0;
-
-      --line: rgba(100, 220, 255, .20);
-      --line-strong: rgba(100, 220, 255, .38);
-
-      --white-line: rgba(255,255,255,.10);
-
-    }
-
-
-    /* =====================================================
-       RESET
-    ====================================================== */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-
-      background:
-        radial-gradient(
-          circle at 75% 5%,
-          rgba(45, 204, 239, .16),
-          transparent 28rem
-        ),
-        radial-gradient(
-          circle at 10% 55%,
-          rgba(67, 224, 208, .07),
-          transparent 25rem
-        ),
-        var(--bg);
-
-      color: var(--text);
-
-      font-family: 'DM Sans', sans-serif;
-
-      line-height: 1.6;
-
-      overflow-x: hidden;
-
-    }
-
-    body.modal-open {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-
-    /* =====================================================
-       NAVBAR
-    ====================================================== */
-
-    .navbar {
-
-      position: fixed;
-
-      z-index: 50;
-
-      top: 18px;
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      width: min(1120px, calc(100% - 32px));
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 13px 18px;
-
-      background: rgba(7, 23, 36, .78);
-
-      border: 1px solid var(--white-line);
-
-      border-radius: 18px;
-
-      backdrop-filter: blur(18px);
-
-      -webkit-backdrop-filter: blur(18px);
-
-    }
-
-
-    /* EM + punto */
-
-    .brand {
-
-      display: flex;
-      align-items: center;
-      gap: 5px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: 1.25rem;
-
-      font-weight: 700;
-
-      letter-spacing: -.04em;
-
-    }
-
-    .brand-mark {
-      color: var(--text);
-    }
-
-    .brand-dot {
-
-      width: 7px;
-      height: 7px;
-
-      display: inline-block;
-
-      border-radius: 50%;
-
-      background: var(--blue);
-
-      box-shadow:
-        0 0 14px rgba(85,217,255,.75);
-
-    }
-
-
-    .nav-links {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 22px;
-
-    }
-
-    .nav-links a {
-
-      color: var(--muted);
-
-      font-size: .88rem;
-
-      transition: color .2s ease;
-
-    }
-
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-    .nav-links .nav-cv {
-
-      color: #06202b;
-
-      background: var(--blue);
-
-      padding: 8px 13px;
-
-      border-radius: 10px;
-
-      font-weight: 700;
-
-    }
-
-
-    /* =====================================================
-       GENERAL
-    ====================================================== */
-
-    .section {
-
-      width: min(1200px, 100%);
-
-      margin: auto;
-
-      padding: 105px 40px;
-
-    }
-
-    .eyebrow {
-
-      color: var(--blue);
-
-      font-size: .73rem;
-
-      font-weight: 700;
-
-      letter-spacing: .16em;
-
-    }
-
-    .section-heading {
-
-      display: grid;
-
-      grid-template-columns: 65px 1fr;
-
-      gap: 20px;
-
-      margin-bottom: 50px;
-
-    }
-
-    .section-number {
-
-      color: var(--blue);
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-weight: 700;
-
-      font-size: 1.1rem;
-
-    }
-
-    .section h2 {
-
-      max-width: 850px;
-
-      margin-top: 10px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: clamp(2.2rem, 4vw, 4rem);
-
-      line-height: 1;
-
-      letter-spacing: -.045em;
-
-    }
-
-    h1 span,
-    h2 span {
-      color: var(--blue);
-    }
-
-
-    /* =====================================================
-       HERO
-    ====================================================== */
-
-    .hero {
-
-      min-height: 100vh;
-
-      width: min(1200px, 100%);
-
-      margin: auto;
-
-      padding: 150px 40px 80px;
-
-      display: grid;
-
-      grid-template-columns: 1.1fr .9fr;
-
-      align-items: center;
-
-      gap: 40px;
-
-    }
-
-    .hero h1 {
-
-      margin-top: 18px;
-
-      max-width: 800px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: clamp(3.2rem, 6vw, 6.3rem);
-
-      line-height: .96;
-
-      letter-spacing: -.06em;
-
-    }
-
-    .hero-description {
-
-      max-width: 680px;
-
-      margin: 28px 0;
-
-      color: var(--muted);
-
-      font-size: 1.06rem;
-
-    }
-
-    .hero-actions {
-
-      display: flex;
-
-      gap: 12px;
-
-      flex-wrap: wrap;
-
-    }
-
-    .btn {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      padding: 13px 18px;
-
-      border-radius: 12px;
-
-      border: 1px solid var(--line);
-
-      font-weight: 700;
-
-      transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
-
-    }
-
-    .btn:hover {
-
-      transform: translateY(-3px);
-
-    }
-
-    .btn.primary {
-
-      background: var(--blue);
-
-      color: #06202b;
-
-      box-shadow:
-        0 12px 35px rgba(85,217,255,.18);
-
-    }
-
-    .btn.ghost {
-
-      color: var(--text);
-
-      background: rgba(255,255,255,.035);
-
-    }
-
-    .hero-tags {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-      margin-top: 25px;
-
-    }
-
-    .hero-tags span,
-    .project-tags span,
-    .tool-list span {
-
-      padding: 7px 11px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 999px;
-
-      color: #d3f5ff;
-
-      background: rgba(85,217,255,.045);
-
-      font-size: .78rem;
-
-    }
-
-
-    /* =====================================================
-       HERO IMAGE
-    ====================================================== */
-
-    .hero-visual {
-
-      position: relative;
-
-      min-height: 540px;
-
-      display: grid;
-
-      place-items: center;
-
-    }
-
-    .visual-glow {
-
-      position: absolute;
-
-      width: 390px;
-      height: 390px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(85,217,255,.20),
-          rgba(67,224,208,.07),
-          transparent 70%
-        );
-
-      filter: blur(35px);
-
-    }
-
-    .profile-illustration {
-
-      position: relative;
-
-      z-index: 2;
-
-      width: min(460px, 100%);
-
-      max-height: 600px;
-
-      object-fit: contain;
-
-      filter:
-        drop-shadow(0 30px 45px rgba(0,0,0,.28));
-
-      animation:
-        float 5s ease-in-out infinite;
-
-    }
-
-    /* SOLO EM + PUNTO */
-
-    .hero-mark {
-
-      position: absolute;
-
-      z-index: 4;
-
-      top: 14%;
-
-      left: 3%;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: 1.4rem;
-
-      font-weight: 700;
-
-      letter-spacing: -.05em;
-
-    }
-
-    .hero-mark span {
-
-      color: var(--blue);
-
-      margin-left: 3px;
-
-    }
-
-    @keyframes float {
-
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-13px);
-      }
-
-    }
-
-
-    /* =====================================================
-       SOBRE MÍ
-    ====================================================== */
-
-    .about-grid {
-
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 55px;
-
-      color: var(--muted);
-
-      font-size: 1rem;
-
-    }
-
-    .strengths {
-
-      margin-top: 55px;
-
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 1px;
-
-      background: var(--line);
-
-      border: 1px solid var(--line);
-
-    }
-
-    .strengths article {
-
-      padding: 27px;
-
-      background: var(--bg);
-
-    }
-
-    .strengths strong {
-
-      color: var(--blue);
-
-      font-size: .75rem;
-
-    }
-
-    .strengths h3 {
-
-      margin: 11px 0 8px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-    }
-
-    .strengths p {
-
-      color: var(--muted);
-
-      font-size: .9rem;
-
-    }
-
-
-    /* =====================================================
-       HERRAMIENTAS
-    ====================================================== */
-
-    .tools-section {
-
-      max-width: none;
-
-      background: #081d2c;
-
-    }
-
-    .tools-section > * {
-
-      width: min(1120px, 100%);
-
-      margin-left: auto;
-      margin-right: auto;
-
-    }
-
-    .tools-layout {
-
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
-
-    }
-
-    .tool-category {
-
-      min-height: 250px;
-
-      padding: 28px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 18px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(21,60,87,.78),
-          rgba(9,30,45,.78)
-        );
-
-      transition:
-        transform .25s ease,
-        border-color .25s ease;
-
-    }
-
-    .tool-category:hover {
-
-      transform: translateY(-7px);
-
-      border-color: var(--line-strong);
-
-    }
-
-    .tool-index {
-
-      color: var(--blue);
-
-      font-size: .75rem;
-
-    }
-
-    .tool-category h3 {
-
-      margin: 12px 0 8px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-    }
-
-    .tool-list {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-      margin-top: 22px;
-
-    }
-
-
-    /* =====================================================
-       PROYECTOS
-    ====================================================== */
-
-    .projects-section {
-      padding-bottom: 120px;
-    }
-
-    .projects-heading {
-
-      grid-template-columns: 1fr 330px;
-
-    }
-
-    .projects-heading p {
-
-      color: var(--muted);
-
-      align-self: end;
-
-    }
-
-
-    /* =====================================================
-       FILTROS
-    ====================================================== */
-
-    .filters {
-
-      display: flex;
-
-      gap: 8px;
-
-      flex-wrap: wrap;
-
-      margin-bottom: 30px;
-
-    }
-
-    .filter {
-
-      cursor: pointer;
-
-      padding: 9px 14px;
-
-      color: var(--muted);
-
-      background: transparent;
-
-      border: 1px solid var(--line);
-
-      border-radius: 999px;
-
-      transition: .2s ease;
-
-    }
-
-    .filter:hover,
-    .filter.active {
-
-      color: #06202b;
-
-      background: var(--blue);
-
-      border-color: var(--blue);
-
-    }
-
-
-    /* =====================================================
-       GRID DE PROYECTOS
-    ====================================================== */
-
-    .project-grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 20px;
-
-    }
-
-    .project-card {
-
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-
-      border-radius: 20px;
-
-      background: var(--card);
-
-      transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
-
-    }
-
-    .project-card:hover {
-
-      transform: translateY(-6px);
-
-      border-color: var(--line-strong);
-
-      box-shadow:
-        0 20px 60px rgba(0,0,0,.20);
-
-    }
-
-    .project-card.featured {
-
-      grid-column: 1 / -1;
-
-      display: grid;
-
-      grid-template-columns: 1.05fr .95fr;
-
-    }
-
-    .project-card.hidden {
-      display: none;
-    }
-
-
-    /* =====================================================
-       IMÁGENES / MINIATURAS
-    ====================================================== */
-
-    .project-media {
-
-      position: relative;
-
-      min-height: 280px;
-
-      overflow: hidden;
-
-      background: #081b28;
-
-    }
-
-    .project-media img {
-
-      width: 100%;
-      height: 100%;
-
-      min-height: 280px;
-
-      display: block;
-
-      object-fit: cover;
-
-    }
-
-    .video-thumbnail {
-
-      position: relative;
-
-      width: 100%;
-      height: 100%;
-
-      min-height: 280px;
-
-      overflow: hidden;
-
-      cursor: pointer;
-
-    }
-
-    .video-thumbnail img {
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition:
-        transform .5s ease,
-        filter .4s ease;
-
-    }
-
-    .project-card:hover .video-thumbnail img {
-
-      transform: scale(1.05);
-
-      filter: brightness(.75);
-
-    }
-
-    .video-thumbnail::after {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,.50),
-          transparent 60%
-        );
-
-      pointer-events: none;
-
-    }
-
-
-    /* Botón play sobre miniatura */
-
-    .play-button {
-
-      position: absolute;
-
-      z-index: 3;
-
-      top: 50%;
-      left: 50%;
-
-      transform: translate(-50%, -50%);
-
-      width: 65px;
-      height: 65px;
-
-      display: grid;
-
-      place-items: center;
-
-      border-radius: 50%;
-
-      background: rgba(85,217,255,.92);
-
-      color: #06202b;
-
-      font-size: 1.25rem;
-
-      box-shadow:
-        0 10px 35px rgba(0,0,0,.30);
-
-      transition:
-        transform .25s ease,
-        background .25s ease;
-
-    }
-
-    .project-card:hover .play-button {
-
-      transform:
-        translate(-50%, -50%)
-        scale(1.08);
-
-      background: var(--blue-light);
-
-    }
-
-
-    /* =====================================================
-       ETIQUETAS DE PROYECTO
-    ====================================================== */
-
-    .project-label {
-
-      position: absolute;
-
-      z-index: 5;
-
-      top: 17px;
-      left: 17px;
-
-      padding: 7px 10px;
-
-      border: 1px solid rgba(255,255,255,.16);
-
-      border-radius: 999px;
-
-      background: rgba(4,19,29,.68);
-
-      color: #d9f7ff;
-
-      font-size: .68rem;
-
-      letter-spacing: .1em;
-
-      backdrop-filter: blur(10px);
-
-    }
-
-
-    /* =====================================================
-       ORO Y PAPEL
-    ====================================================== */
-
-    .oro-media {
-
-      background:
-        linear-gradient(
-          135deg,
-          #0b2940,
-          #174d66
-        );
-
-    }
-
-    .oro-media img {
-
-      object-position: center;
-
-    }
-
-
-    /* =====================================================
-       BOOMBYTE
-    ====================================================== */
-
-    .boombyte-media {
-
-      background:
-        linear-gradient(
-          135deg,
-          #082a40,
-          #0e5268
-        );
-
-    }
-
-
-    /* =====================================================
-       CONTENIDO TARJETAS
-    ====================================================== */
-
-    .project-content {
-
-      padding: 27px;
-
-    }
-
-    .project-topline {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 12px;
-
-      color: var(--blue);
-
-      font-size: .70rem;
-
-      text-transform: uppercase;
-
-      letter-spacing: .08em;
-
-    }
-
-    .project-content h3 {
-
-      margin: 11px 0 8px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: 1.55rem;
-
-      line-height: 1.15;
-
-    }
-
-    .project-summary {
-
-      color: var(--muted);
-
-      font-size: .91rem;
-
-      display: -webkit-box;
-
-      -webkit-line-clamp: 3;
-
-      -webkit-box-orient: vertical;
-
-      overflow: hidden;
-
-    }
-
-    .project-tags {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 7px;
-
-      margin-top: 18px;
-
-    }
-
-    .project-tags span {
-
-      padding: 5px 9px;
-
-      font-size: .72rem;
-
-    }
-
-
-    /* =====================================================
-       BOTÓN VER DETALLES
-    ====================================================== */
-
-    .project-more {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 7px;
-
-      margin-top: 20px;
-
-      padding: 9px 13px;
-
-      color: #07202b;
-
-      background: var(--blue);
-
-      border: 1px solid var(--blue);
-
-      border-radius: 10px;
-
-      cursor: pointer;
-
-      font-weight: 700;
-
-      font-size: .82rem;
-
-      transition:
-        transform .2s ease,
-        background .2s ease;
-
-    }
-
-    .project-more:hover {
-
-      transform: translateY(-2px);
-
-      background: var(--blue-light);
-
-    }
-
-    .project-hint {
-
-      display: block;
-
-      margin-top: 8px;
-
-      color: #7396a8;
-
-      font-size: .72rem;
-
-    }
-
-
-    /* =====================================================
-       LISTAS DENTRO DEL MODAL
-    ====================================================== */
-
-    .project-list {
-
-      margin: 10px 0 18px 20px;
-
-      color: var(--muted);
-
-    }
-
-    .project-list li {
-
-      margin-bottom: 5px;
-
-    }
-
-
-    /* =====================================================
-       MODAL
-    ====================================================== */
-
-    .modal {
-
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 100;
-
-      display: none;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 25px;
-
-    }
-
-    .modal.show {
-
-      display: flex;
-
-      animation: modalFade .25s ease;
-
-    }
-
-    @keyframes modalFade {
-
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-
-    }
-
-    .modal-backdrop {
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        rgba(2,10,17,.82);
-
-      backdrop-filter: blur(12px);
-
-      -webkit-backdrop-filter: blur(12px);
-
-    }
-
-    .modal-box {
-
-      position: relative;
-
-      z-index: 2;
-
-      width: min(900px, 100%);
-
-      max-height: 92vh;
-
-      overflow-y: auto;
-
-      border: 1px solid var(--line-strong);
-
-      border-radius: 24px;
-
-      background: #0b2233;
-
-      box-shadow:
-        0 35px 100px rgba(0,0,0,.55);
-
-      animation: modalZoom .3s cubic-bezier(.2,.8,.2,1);
-
-    }
-
-    @keyframes modalZoom {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          scale(.90)
-          translateY(15px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          scale(1)
-          translateY(0);
-
-      }
-
-    }
-
-    .modal-close {
-
-      position: absolute;
-
-      z-index: 10;
-
-      top: 15px;
-      right: 15px;
-
-      width: 40px;
-      height: 40px;
-
-      display: grid;
-
-      place-items: center;
-
-      border: 1px solid rgba(255,255,255,.18);
-
-      border-radius: 50%;
-
-      color: white;
-
-      background: rgba(5,20,30,.75);
-
-      cursor: pointer;
-
-      font-size: 1.4rem;
-
-      backdrop-filter: blur(10px);
-
-    }
-
-    .modal-close:hover {
-
-      background: var(--blue);
-
-      color: #06202b;
-
-    }
-
-
-    /* Imagen grande */
-
-    .modal-media {
-
-      width: 100%;
-
-      min-height: 400px;
-
-      background: #061720;
-
-    }
-
-    .modal-media img {
-
-      width: 100%;
-
-      max-height: 500px;
-
-      display: block;
-
-      object-fit: cover;
-
-    }
-
-    .modal-video {
-
-      width: 100%;
-
-      aspect-ratio: 16 / 9;
-
-      border: 0;
-
-      display: block;
-
-    }
-
-
-    /* Información modal */
-
-    .modal-content {
-
-      padding: 35px;
-
-    }
-
-    .modal-topline {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      flex-wrap: wrap;
-
-      color: var(--blue);
-
-      font-size: .73rem;
-
-      text-transform: uppercase;
-
-      letter-spacing: .08em;
-
-    }
-
-    .modal-content h2 {
-
-      margin: 10px 0 20px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: clamp(2rem, 5vw, 3.5rem);
-
-      line-height: 1;
-
-      letter-spacing: -.04em;
-
-    }
-
-    .modal-content h2 span {
-
-      color: var(--blue);
-
-    }
-
-    .modal-description {
-
-      color: var(--muted);
-
-      font-size: .97rem;
-
-    }
-
-    .modal-description p {
-
-      margin-bottom: 15px;
-
-    }
-
-    .modal-description strong {
-
-      color: var(--text);
-
-    }
-
-    .modal-tags {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 7px;
-
-      margin: 25px 0;
-
-    }
-
-    .modal-tags span {
-
-      padding: 7px 11px;
-
-      border-radius: 999px;
-
-      border: 1px solid var(--line);
-
-      color: #d7f7ff;
-
-      background: rgba(85,217,255,.05);
-
-      font-size: .75rem;
-
-    }
-
-    .modal-links {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-
-      margin-top: 20px;
-
-    }
-
-    .modal-link {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      padding: 10px 14px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 10px;
-
-      color: var(--blue);
-
-      font-weight: 700;
-
-      font-size: .82rem;
-
-      transition: .2s ease;
-
-    }
-
-    .modal-link:hover {
-
-      background: rgba(85,217,255,.10);
-
-      border-color: var(--blue);
-
-    }
-
-
-    /* =====================================================
-       CV
-    ====================================================== */
-
-    .cv-section {
-
-      padding-top: 20px;
-
-    }
-
-    .cv-card {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 30px;
-
-      padding: 45px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 24px;
-
-      background:
-        radial-gradient(
-          circle at 90% 50%,
-          rgba(85,217,255,.14),
-          transparent 25rem
-        ),
-        var(--card);
-
-    }
-
-    .cv-card h2 {
-
-      font-size: clamp(2rem, 4vw, 3.5rem);
-
-    }
-
-    .cv-card p {
-
-      margin-top: 12px;
-
-      color: var(--muted);
-
-    }
-
-
-    /* =====================================================
-       EDUCACIÓN
-    ====================================================== */
-
-    .education-grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 18px;
-
-    }
-
-    .education-card {
-
-      padding: 30px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 18px;
-
-      background: var(--card);
-
-    }
-
-    .education-card > span {
-
-      color: var(--blue);
-
-      font-size: .75rem;
-
-    }
-
-    .education-card h3 {
-
-      margin: 10px 0 5px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: 1.4rem;
-
-    }
-
-    .education-card p {
-
-      color: var(--muted);
-
-    }
-
-
-    /* =====================================================
-       FOOTER
-    ====================================================== */
-
-    .footer {
-
-      padding: 110px max(40px, calc((100vw - 1120px) / 2)) 30px;
-
-      background: #04121d;
-
-    }
-
-    .footer h2 {
-
-      max-width: 750px;
-
-      margin-top: 12px;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-
-      line-height: .95;
-
-      letter-spacing: -.06em;
-
-    }
-
-    .footer > div:first-child p {
-
-      max-width: 550px;
-
-      margin-top: 20px;
-
-      color: var(--muted);
-
-    }
-
-    .contact-links {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 20px;
-
-      margin: 55px 0;
-
-    }
-
-    .contact-links a {
-
-      color: #d4f6ff;
-
-      border-bottom: 1px solid var(--line);
-
-      padding-bottom: 5px;
-
-      transition: color .2s ease;
-
-    }
-
-    .contact-links a:hover {
-
-      color: var(--blue);
-
-    }
-
-    .footer-bottom {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      padding-top: 20px;
-
-      border-top: 1px solid var(--white-line);
-
-      color: #7190a1;
-
-      font-size: .75rem;
-
-    }
-
-
-    /* =====================================================
-       RESPONSIVE
-    ====================================================== */
-
-    @media (max-width: 900px) {
-
-      .hero {
-
-        grid-template-columns: 1fr;
-
-        padding-top: 140px;
-
-      }
-
-      .hero-visual {
-
-        min-height: 450px;
-
-      }
-
-      .project-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-      .project-card.featured {
-
-        grid-column: auto;
-
-        grid-template-columns: 1fr;
-
-      }
-
-      .tools-layout {
-
-        grid-template-columns: 1fr;
-
-      }
-
-      .about-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-
-      }
-
-      .strengths {
-
-        grid-template-columns: 1fr;
-
-      }
-
-      .projects-heading {
-
-        display: block;
-
-      }
-
-      .projects-heading p {
-
-        margin-top: 20px;
-
-      }
-
-      .education-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-    }
-
-
-    @media (max-width: 650px) {
-
-      .navbar {
-
-        top: 10px;
-
-      }
-
-      .nav-links a:not(.nav-cv) {
-
-        display: none;
-
-      }
-
-      .section,
-      .hero {
-
-        padding-left: 22px;
-
-        padding-right: 22px;
-
-      }
-
-      .hero h1 {
-
-        font-size: 3.1rem;
-
-      }
-
-      .hero-visual {
-
-        min-height: 370px;
-
-      }
-
-      .hero-mark {
-
-        left: 0;
-
-      }
-
-      .section-heading {
-
-        grid-template-columns: 1fr;
-
-      }
-
-      .cv-card {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        padding: 30px;
-
-      }
-
-      .footer {
-
-        padding-left: 22px;
-
-        padding-right: 22px;
-
-      }
-
-      .footer-bottom {
-
-        flex-direction: column;
-
-        gap: 8px;
-
-      }
-
-      .modal {
-
-        padding: 10px;
-
-      }
-
-      .modal-content {
-
-        padding: 25px 20px;
-
-      }
-
-      .modal-media {
-
-        min-height: 250px;
-
-      }
-
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -1863,1687 +25,108 @@
 <body>
 
 
-  <!-- =====================================================
-       NAVBAR
-  ====================================================== -->
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-  <header class="navbar">
+<header class="site-header">
 
-    <a href="#inicio" class="brand">
+  <a href="#inicio" class="brand">
+    E<span>M</span><i></i>
+  </a>
 
-      <span class="brand-mark">EM</span>
 
-      <span class="brand-dot"></span>
+  <nav class="nav-links">
 
+    <a href="#sobre-mi">
+      Sobre mí
     </a>
 
-
-    <nav class="nav-links">
-
-      <a href="#sobre-mi">
-        Sobre mí
-      </a>
-
-      <a href="#especialidades">
-        Especialidades
-      </a>
-
-      <a href="#proyectos">
-        Proyectos
-      </a>
-
-      <a href="#contacto">
-        Contacto
-      </a>
-
-      <a
-        href="assets/CV-Emily-Mora-Llanos.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="nav-cv"
-      >
-        CV ↗
-      </a>
-
-    </nav>
-
-  </header>
-
-
-
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
-
-  <section class="hero" id="inicio">
-
-
-    <div class="hero-content">
-
-      <span class="eyebrow">
-        INGENIERÍA EN MULTIMEDIA · UX/UI · INTERACCIÓN
-      </span>
-
-
-      <h1>
-
-        Diseño experiencias digitales que
-        <span>se sienten</span>, no solo se ven.
-
-      </h1>
-
-
-      <p class="hero-description">
-
-        Soy Emily Mora Llanos, Ingeniera en Multimedia enfocada en
-        UX/UI, diseño de interfaces y experiencias interactivas.
-        Combino diseño, tecnología y narrativa visual para convertir
-        ideas en experiencias claras, funcionales y atractivas.
-
-      </p>
-
-
-      <div class="hero-actions">
-
-        <a
-          href="#proyectos"
-          class="btn primary"
-        >
-          Explorar proyectos
-          <span>↗</span>
-        </a>
-
-
-        <a
-          href="assets/CV-Emily-Mora-Llanos.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn ghost"
-        >
-          Ver CV
-        </a>
-
-      </div>
-
-
-      <div class="hero-tags">
-
-        <span>UX/UI</span>
-        <span>Diseño de interacción</span>
-        <span>Unity</span>
-        <span>Multimedia</span>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="hero-visual">
-
-      <div class="visual-glow"></div>
-
-
-      <div class="hero-mark">
-        EM<span>•</span>
-      </div>
-
-
-      <img
-        src="assets/images/Emily.png"
-        alt="Emily Mora Llanos"
-        class="profile-illustration"
-      >
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       SOBRE MÍ
-  ====================================================== -->
-
-  <section id="sobre-mi" class="section about">
-
-
-    <div class="section-heading">
-
-      <span class="section-number">
-        01
-      </span>
-
-
-      <div>
-
-        <span class="eyebrow">
-          SOBRE MÍ
-        </span>
-
-
-        <h2>
-
-          Diseño con una mirada
-          <span>multimedia.</span>
-
-        </h2>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="about-grid">
-
-      <p>
-
-        Mi perfil conecta el diseño y la tecnología para crear
-        interfaces y experiencias digitales intuitivas, visualmente
-        coherentes y pensadas para las personas.
-
-      </p>
-
-
-      <p>
-
-        Como Ingeniera en Multimedia, puedo participar desde la
-        conceptualización y UX/UI hasta la implementación,
-        animación, programación e integración de recursos
-        multimedia.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="strengths">
-
-
-      <article>
-
-        <strong>01</strong>
-
-        <h3>
-          Diseño + tecnología
-        </h3>
-
-        <p>
-          Conecto decisiones visuales con soluciones técnicas
-          para crear productos digitales funcionales.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <strong>02</strong>
-
-        <h3>
-          Experiencias interactivas
-        </h3>
-
-        <p>
-          Me interesa que el usuario participe, explore y
-          entienda el contenido a través de la interacción.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <strong>03</strong>
-
-        <h3>
-          Visión multidisciplinar
-        </h3>
-
-        <p>
-          Integro UX/UI, programación, animación, 3D y narrativa
-          visual según las necesidades del proyecto.
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       ESPECIALIDADES
-  ====================================================== -->
-
-  <section
-    id="especialidades"
-    class="section tools-section"
-  >
-
-
-    <div class="section-heading">
-
-      <span class="section-number">
-        02
-      </span>
-
-
-      <div>
-
-        <span class="eyebrow">
-          HERRAMIENTAS & HABILIDADES
-        </span>
-
-
-        <h2>
-
-          Las herramientas detrás de
-          <span>mis ideas.</span>
-
-        </h2>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="tools-layout">
-
-
-      <article class="tool-category">
-
-        <span class="tool-index">
-          01
-        </span>
-
-        <h3>
-          UX / UI & Diseño
-        </h3>
-
-
-        <div class="tool-list">
-
-          <span>Figma</span>
-          <span>Illustrator</span>
-          <span>Photoshop</span>
-          <span>After Effects</span>
-          <span>Adobe Animate</span>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="tool-category">
-
-        <span class="tool-index">
-          02
-        </span>
-
-        <h3>
-          Desarrollo & Interacción
-        </h3>
-
-
-        <div class="tool-list">
-
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>C#</span>
-          <span>Python</span>
-          <span>Unity</span>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="tool-category">
-
-        <span class="tool-index">
-          03
-        </span>
-
-        <h3>
-          Multimedia
-        </h3>
-
-
-        <div class="tool-list">
-
-          <span>Maya</span>
-          <span>Blender</span>
-          <span>DaVinci Resolve</span>
-          <span>Reaper</span>
-          <span>Audition</span>
-          <span>MATLAB</span>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       PROYECTOS
-  ====================================================== -->
-
-  <section
-    id="proyectos"
-    class="section projects-section"
-  >
-
-
-    <div class="section-heading projects-heading">
-
-
-      <div>
-
-        <span class="eyebrow">
-          03 · PORTAFOLIO
-        </span>
-
-
-        <h2>
-
-          Proyectos que
-          <span>convierten ideas en experiencias.</span>
-
-        </h2>
-
-      </div>
-
-
-      <p>
-
-        Explora una selección de proyectos de UX/UI,
-        desarrollo, animación, 3D y experiencias interactivas.
-
-      </p>
-
-
-    </div>
-
-
-
-    <!-- FILTROS -->
-
-    <div class="filters">
-
-      <button
-        class="filter active"
-        data-filter="all"
-      >
-        Todos
-      </button>
-
-      <button
-        class="filter"
-        data-filter="ux"
-      >
-        UX/UI
-      </button>
-
-      <button
-        class="filter"
-        data-filter="interactive"
-      >
-        Interactivas
-      </button>
-
-      <button
-        class="filter"
-        data-filter="development"
-      >
-        Desarrollo
-      </button>
-
-      <button
-        class="filter"
-        data-filter="3d"
-      >
-        3D & Animación
-      </button>
-
-    </div>
-
-
-
-    <div class="project-grid">
-
-
-
-      <!-- =================================================
-           ORO Y PAPEL
-      ================================================== -->
-
-      <article
-        class="project-card featured"
-        data-category="ux interactive development"
-      >
-
-
-        <div class="project-media">
-
-          <span class="project-label">
-            FEATURED · EXPERIENCIA DIGITAL
-          </span>
-
-
-          <div
-            class="video-thumbnail"
-            onclick="openProject('oro')"
-          >
-
-            <img
-              src="https://img.youtube.com/vi/frSALwGp0d8/maxresdefault.jpg"
-              alt="Oro y papel: Un tesoro restringido"
-            >
-
-            <div class="play-button">
-              ▶
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              UX/UI · Interacción
-            </span>
-
-            <span>
-              Equipo de 2
-            </span>
-
-          </div>
-
-
-          <h3>
-            Oro y papel: Un tesoro restringido
-          </h3>
-
-
-          <p class="project-summary">
-
-            Experiencia digital interactiva que explora la
-            relación entre objetos heredados y adquiridos,
-            representados mediante anillos y libros, y cómo
-            el acceso a estos objetos se encuentra condicionado
-            por el contexto y el recorrido del usuario.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Unity</span>
-            <span>UX/UI</span>
-            <span>Interacción</span>
-            <span>Narrativa</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('oro')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-          <span class="project-hint">
-            Haz clic para conocer el proyecto completo
-          </span>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           BOOMBYTE
-      ================================================== -->
-
-      <article
-        class="project-card featured"
-        data-category="interactive development"
-      >
-
-
-        <div class="project-media">
-
-          <span class="project-label">
-            FEATURED · VR
-          </span>
-
-
-          <div
-            class="video-thumbnail"
-            onclick="openProject('boombyte')"
-          >
-
-            <img
-              src="https://img.youtube.com/vi/YilMMnaU37Q/maxresdefault.jpg"
-              alt="BoomByte videojuego de realidad virtual"
-            >
-
-            <div class="play-button">
-              ▶
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Realidad Virtual
-            </span>
-
-            <span>
-              Equipo multidisciplinar
-            </span>
-
-          </div>
-
-
-          <h3>
-            BoomByte
-          </h3>
-
-
-          <p class="project-summary">
-
-            Videojuego de realidad virtual desarrollado para
-            Meta Quest 2 como parte de la conmemoración de los
-            25 años del programa de Ingeniería en Multimedia
-            de la Universidad Militar Nueva Granada.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>VR</span>
-            <span>Unity</span>
-            <span>UI</span>
-            <span>C#</span>
-            <span>Meta Quest 2</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('boombyte')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-          <span class="project-hint">
-            Haz clic para conocer el proyecto completo
-          </span>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           AT-AT
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="3d"
-      >
-
-
-        <div class="project-media image-media">
-
-          <img
-            src="assets/images/at-at.jpg"
-            alt="Modelado 3D AT-AT de Star Wars"
-          >
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Modelado 3D
-            </span>
-
-            <span>
-              Maya
-            </span>
-
-          </div>
-
-
-          <h3>
-            Modelado 3D AT-AT de Star Wars
-          </h3>
-
-
-          <p class="project-summary">
-
-            Proyecto de modelado 3D basado en un AT-AT del
-            universo Star Wars, enfocado en geometría,
-            proporciones, detalles estructurales y preparación
-            para renderizado.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Maya</span>
-            <span>3D</span>
-            <span>Modelado</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('atat')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           IDLES
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="interactive development 3d"
-      >
-
-
-        <div class="project-media">
-
-          <div
-            class="video-thumbnail"
-            onclick="openProject('idles')"
-          >
-
-            <img
-              src="https://img.youtube.com/vi/CCgRhQHY7ic/maxresdefault.jpg"
-              alt="Idles de Animación para Videojuegos"
-            >
-
-            <div class="play-button">
-              ▶
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Animación · Game Dev
-            </span>
-
-            <span>
-              Maya + Unity
-            </span>
-
-          </div>
-
-
-          <h3>
-            Idles de Animación para Videojuegos
-          </h3>
-
-
-          <p class="project-summary">
-
-            Proyecto enfocado en el estudio y desarrollo de
-            animaciones tipo idle para personajes de videojuegos.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Maya</span>
-            <span>Unity</span>
-            <span>C#</span>
-            <span>Animación 3D</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('idles')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           A-LA-NA
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="3d"
-      >
-
-
-        <div class="project-media">
-
-          <div
-            class="video-thumbnail"
-            onclick="openProject('alana')"
-          >
-
-            <img
-              src="https://img.youtube.com/vi/xfsx96AveSY/maxresdefault.jpg"
-              alt="Corto animado 2D A-la-na"
-            >
-
-            <div class="play-button">
-              ▶
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Animación 2D
-            </span>
-
-            <span>
-              Adobe Animate
-            </span>
-
-          </div>
-
-
-          <h3>
-            Corto Animado 2D A-la-na
-          </h3>
-
-
-          <p class="project-summary">
-
-            Corto animado realizado en formato filminuto.
-            Incluyó storyboard, diseño de personajes y escenarios,
-            así como animación mediante ciclos de caminata.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Illustrator</span>
-            <span>Animate</span>
-            <span>2D</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('alana')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           ART DAYZ
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="ux development"
-      >
-
-
-        <div class="project-media image-media">
-
-          <img
-            src="assets/images/artdayz.jpg"
-            alt="Art Dayz"
-          >
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              UX/UI · Web
-            </span>
-
-            <span>
-              Equipo de 3
-            </span>
-
-          </div>
-
-
-          <h3>
-            Art Dayz – Plataforma Web para Artistas
-          </h3>
-
-
-          <p class="project-summary">
-
-            Plataforma web orientada a artistas, enfocada en
-            publicación de portafolios, monetización de productos
-            y oferta de servicios creativos.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Figma</span>
-            <span>HTML</span>
-            <span>CSS</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('artdayz')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           REAL TIME
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="ux development"
-      >
-
-
-        <div class="project-media image-media">
-
-          <img
-            src="assets/images/realtime.png"
-            alt="Real Time Consulting Services"
-          >
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Web · UX/UI
-            </span>
-
-            <span>
-              Cliente real
-            </span>
-
-          </div>
-
-
-          <h3>
-            Real Time Consulting Services SAS
-          </h3>
-
-
-          <p class="project-summary">
-
-            Diseño y desarrollo visual de página web corporativa
-            para empresa enfocada en ciberseguridad y
-            ciberresiliencia.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>WordPress</span>
-            <span>HTML</span>
-            <span>Figma</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('realtime')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           ALICE
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="3d"
-      >
-
-
-        <div class="project-media">
-
-          <div
-            class="video-thumbnail"
-            onclick="openProject('alice')"
-          >
-
-            <img
-              src="https://img.youtube.com/vi/-L9aTduN9uc/maxresdefault.jpg"
-              alt="Alice in Borderland – Animación 3D"
-            >
-
-            <div class="play-button">
-              ▶
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Animación 3D
-            </span>
-
-            <span>
-              Maya
-            </span>
-
-          </div>
-
-
-          <h3>
-            Alice in Borderland – Animación 3D
-          </h3>
-
-
-          <p class="project-summary">
-
-            Animación 3D basada en una escena de referencia de
-            Alice in Borderland.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Maya</span>
-            <span>Animation</span>
-            <span>3D</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('alice')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           ASMR
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="interactive 3d"
-      >
-
-
-        <div class="project-media">
-
-          <div
-            class="video-thumbnail"
-            onclick="openProject('asmr')"
-          >
-
-            <img
-              src="https://img.youtube.com/vi/0flWEsl5Rjg/maxresdefault.jpg"
-              alt="ASMR Real Time – Experiencia Interactiva"
-            >
-
-            <div class="play-button">
-              ▶
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Experiencia interactiva
-            </span>
-
-            <span>
-              Equipo de 2
-            </span>
-
-          </div>
-
-
-          <h3>
-            ASMR Real Time – Experiencia Interactiva
-          </h3>
-
-
-          <p class="project-summary">
-
-            Aplicación interactiva tipo juego diseñada para
-            transformar la experiencia ASMR en una interacción
-            activa.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Maya</span>
-            <span>Unity</span>
-            <span>DaVinci Resolve</span>
-            <span>Audio</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('asmr')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           POLYMERGE
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="interactive 3d"
-      >
-
-
-        <div class="project-media">
-
-          <div
-            class="video-thumbnail"
-            onclick="openProject('polymerge')"
-          >
-
-            <img
-              src="https://img.youtube.com/vi/Z73o503LE8k/maxresdefault.jpg"
-              alt="Polymerge – Videojuego Educativo"
-            >
-
-            <div class="play-button">
-              ▶
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Videojuego educativo
-            </span>
-
-            <span>
-              Equipo de 7
-            </span>
-
-          </div>
-
-
-          <h3>
-            Polymerge – Videojuego Educativo
-          </h3>
-
-
-          <p class="project-summary">
-
-            Videojuego educativo enfocado en la enseñanza de
-            conceptos básicos de química y formación de polímeros.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Maya</span>
-            <span>Unity</span>
-            <span>3D</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('polymerge')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           LEGO
-      ================================================== -->
-
-      <article
-        class="project-card"
-        data-category="3d"
-      >
-
-
-        <div class="project-media image-media">
-
-          <img
-            src="assets/images/lego.jpg"
-            alt="Personaje Lego – Modelado y Render 3D"
-          >
-
-        </div>
-
-
-        <div class="project-content">
-
-
-          <div class="project-topline">
-
-            <span>
-              Modelado 3D
-            </span>
-
-            <span>
-              Maya + Blender
-            </span>
-
-          </div>
-
-
-          <h3>
-            Personaje Lego – Modelado y Render 3D
-          </h3>
-
-
-          <p class="project-summary">
-
-            Modelado 3D de personaje estilo Lego inspirado en
-            K-pop Demon Hunters.
-
-          </p>
-
-
-          <div class="project-tags">
-
-            <span>Maya</span>
-            <span>Blender</span>
-            <span>Render</span>
-
-          </div>
-
-
-          <button
-            class="project-more"
-            onclick="openProject('lego')"
-          >
-            Ver detalles ↗
-          </button>
-
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       CV
-  ====================================================== -->
-
-  <section class="section cv-section">
-
-
-    <div class="cv-card">
-
-
-      <div>
-
-        <span class="eyebrow">
-          ¿QUIERES CONOCER MÁS?
-        </span>
-
-
-        <h2>
-
-          También puedes revisar mi
-          <span>hoja de vida.</span>
-
-        </h2>
-
-
-        <p>
-
-          Conoce mi formación, herramientas, experiencia y
-          proyectos con mayor detalle.
-
-        </p>
-
-      </div>
-
-
-      <a
-        href="assets/CV-Emily-Mora-Llanos.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn primary"
-      >
-        Abrir CV ↗
-      </a>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       EDUCACIÓN
-  ====================================================== -->
-
-  <section class="section education-section">
-
-
-    <div class="section-heading">
-
-      <span class="section-number">
-        04
-      </span>
-
-
-      <div>
-
-        <span class="eyebrow">
-          FORMACIÓN
-        </span>
-
-
-        <h2>
-
-          Formación que complementa
-          <span>mi perfil.</span>
-
-        </h2>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="education-grid">
-
-
-      <article class="education-card">
-
-        <span>
-          2022 – Actualidad
-        </span>
-
-        <h3>
-          Ingeniería en Multimedia
-        </h3>
-
-        <p>
-          Universidad Militar Nueva Granada
-        </p>
-
-      </article>
-
-
-      <article class="education-card">
-
-        <span>
-          2021
-        </span>
-
-        <h3>
-          Bachiller Académico
-        </h3>
-
-        <p>
-          Colegio Calasanz de Pereira
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer
-    id="contacto"
-    class="footer"
-  >
-
-
-    <div class="footer-content">
-
-
-      <span class="eyebrow">
-        CONTACTO
-      </span>
-
-
-      <h2>
-
-        Hagamos que una idea se
-        <span>convierta en experiencia.</span>
-
-      </h2>
-
-
-      <p>
-
-        Puedes encontrarme en mis diferentes perfiles o escribirme
-        directamente por correo.
-
-      </p>
-
-
-      <div class="contact-links">
-
-
-        <a href="mailto:emily.mora.llanos@gmail.com">
-          ✉ emily.mora.llanos@gmail.com ↗
-        </a>
-
-
-        <a
-          href="https://www.linkedin.com/in/emily-mora-40b7393aa/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn ↗
-        </a>
-
-
-        <a
-          href="https://github.com/LymoEm"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub ↗
-        </a>
-
-
-        <a
-          href="https://www.instagram.com/lymo_em/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram ↗
-        </a>
-
-
-        <a
-          href="https://emilymora.itch.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Itch.io ↗
-        </a>
-
-
-      </div>
-
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-      <span>
-        © 2026 Emily Mora Llanos
-      </span>
-
-      <span>
-        Ingeniera en Multimedia · UX/UI
-      </span>
-
-    </div>
-
-
-  </footer>
-
-
-
-  <!-- =====================================================
-       MODAL DE PROYECTOS
-  ====================================================== -->
-
-  <div
-    class="modal"
-    id="projectModal"
-    aria-hidden="true"
-  >
-
-
-    <div
-      class="modal-backdrop"
-      onclick="closeProject()"
-    ></div>
-
-
-    <div
-      class="modal-box"
-      role="dialog"
-      aria-modal="true"
+    <a href="#especialidades">
+      Especialidades
+    </a>
+
+    <a href="#proyectos">
+      Proyectos
+    </a>
+
+    <a href="#contacto">
+      Contacto
+    </a>
+
+    <a
+      href="assets/CV-Emily-Mora-Llanos.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-cv"
     >
+      CV ↗
+    </a>
+
+  </nav>
+
+</header>
 
 
-      <button
-        class="modal-close"
-        onclick="closeProject()"
-        aria-label="Cerrar"
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero" id="inicio">
+
+  <div class="hero-content">
+
+    <span class="eyebrow">
+      INGENIERÍA EN MULTIMEDIA · UX/UI · INTERACCIÓN
+    </span>
+
+
+    <h1>
+      Diseño experiencias digitales que
+      <span>se sienten</span>, no solo se ven.
+    </h1>
+
+
+    <p class="hero-description">
+
+      Soy Emily Mora Llanos, Ingeniera en Multimedia enfocada en
+      UX/UI, diseño de interfaces y experiencias interactivas.
+      Combino diseño, tecnología y narrativa visual para crear
+      experiencias claras, funcionales y atractivas.
+
+    </p>
+
+
+    <div class="hero-actions">
+
+      <a href="#proyectos" class="btn primary">
+        Explorar proyectos
+        <span>↗</span>
+      </a>
+
+
+      <a
+        href="assets/CV-Emily-Mora-Llanos.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn ghost"
       >
-        ×
-      </button>
+        Ver CV
+      </a>
+
+    </div>
 
 
-      <div
-        class="modal-media"
-        id="modalMedia"
-      >
-      </div>
+    <div class="hero-tags">
 
-
-      <div class="modal-content">
-
-
-        <div
-          class="modal-topline"
-          id="modalTopline"
-        >
-        </div>
-
-
-        <h2 id="modalTitle">
-        </h2>
-
-
-        <div
-          class="modal-description"
-          id="modalDescription"
-        >
-        </div>
-
-
-        <div
-          class="modal-tags"
-          id="modalTags"
-        >
-        </div>
-
-
-        <div
-          class="modal-links"
-          id="modalLinks"
-        >
-        </div>
-
-
-      </div>
+      <span>UX/UI</span>
+      <span>Diseño de interacción</span>
+      <span>Unity</span>
+      <span>Multimedia</span>
 
     </div>
 
@@ -3551,872 +134,2069 @@
 
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-       TODO QUEDA DENTRO DEL MISMO HTML
-  ====================================================== -->
+  <div class="hero-visual">
 
-  <script>
+    <div class="visual-glow"></div>
 
 
-    /* =====================================================
-       DATOS DE LOS PROYECTOS
-    ====================================================== */
+    <img
+      src="assets/images/Emily.png"
+      alt="Emily Mora Llanos"
+      class="profile-illustration"
+    >
 
-    const projects = {
+
+    <div class="floating-card card-one">
+      UX/UI
+      <span>✦</span>
+    </div>
+
+  </div>
+
+</section>
 
 
-      /* ---------------------------------------------------
+
+<!-- =====================================================
+     SOBRE MÍ
+====================================================== -->
+
+<section id="sobre-mi" class="section about">
+
+  <div class="section-heading">
+
+    <span class="section-number">
+      01
+    </span>
+
+    <div>
+
+      <span class="eyebrow">
+        SOBRE MÍ
+      </span>
+
+      <h2>
+        Diseño con una mirada
+        <span>multimedia.</span>
+      </h2>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="about-grid">
+
+    <p>
+      Mi perfil se encuentra en la intersección entre el diseño
+      y la tecnología. Me interesa crear interfaces y experiencias
+      digitales intuitivas, visualmente coherentes y fáciles de
+      entender.
+    </p>
+
+
+    <p>
+      Mi formación en Ingeniería en Multimedia me permite integrar
+      UX/UI, programación, animación, 3D y narrativa visual para
+      convertir ideas en experiencias digitales.
+    </p>
+
+  </div>
+
+
+
+  <div class="strengths">
+
+    <article>
+
+      <strong>01</strong>
+
+      <h3>
+        Diseño + tecnología
+      </h3>
+
+      <p>
+        Conecto decisiones visuales con soluciones técnicas.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <strong>02</strong>
+
+      <h3>
+        Experiencias interactivas
+      </h3>
+
+      <p>
+        Creo experiencias donde el usuario puede explorar y participar.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <strong>03</strong>
+
+      <h3>
+        Visión multidisciplinar
+      </h3>
+
+      <p>
+        Integro UX/UI, programación, animación, 3D y narrativa visual.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ESPECIALIDADES
+====================================================== -->
+
+<section
+  id="especialidades"
+  class="section tools-section"
+>
+
+  <div class="section-heading">
+
+    <span class="section-number">
+      02
+    </span>
+
+    <div>
+
+      <span class="eyebrow">
+        HERRAMIENTAS & HABILIDADES
+      </span>
+
+      <h2>
+        Las herramientas detrás de
+        <span>mis ideas.</span>
+      </h2>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="tools-layout">
+
+
+    <article class="tool-category">
+
+      <span class="tool-index">
+        01
+      </span>
+
+      <h3>
+        UX / UI & Diseño
+      </h3>
+
+      <div class="tool-list">
+
+        <span>Figma</span>
+        <span>Illustrator</span>
+        <span>Photoshop</span>
+        <span>After Effects</span>
+        <span>Adobe Animate</span>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="tool-category">
+
+      <span class="tool-index">
+        02
+      </span>
+
+      <h3>
+        Desarrollo & Interacción
+      </h3>
+
+      <div class="tool-list">
+
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>C#</span>
+        <span>Python</span>
+        <span>Unity</span>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="tool-category">
+
+      <span class="tool-index">
+        03
+      </span>
+
+      <h3>
+        Multimedia
+      </h3>
+
+      <div class="tool-list">
+
+        <span>Maya</span>
+        <span>Blender</span>
+        <span>DaVinci Resolve</span>
+        <span>Reaper</span>
+        <span>Audition</span>
+        <span>MATLAB</span>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROYECTOS
+====================================================== -->
+
+<section
+  id="proyectos"
+  class="section projects-section"
+>
+
+
+  <div class="section-heading projects-heading">
+
+    <div>
+
+      <span class="eyebrow">
+        03 · PORTAFOLIO
+      </span>
+
+      <h2>
+        Proyectos que
+        <span>convierten ideas en experiencias.</span>
+      </h2>
+
+    </div>
+
+
+    <p>
+      Una selección de proyectos de UX/UI, desarrollo,
+      animación, 3D y experiencias interactivas.
+    </p>
+
+  </div>
+
+
+
+  <!-- FILTROS -->
+
+  <div class="filters">
+
+    <button
+      class="filter active"
+      data-filter="all"
+    >
+      Todos
+    </button>
+
+    <button
+      class="filter"
+      data-filter="ux"
+    >
+      UX/UI
+    </button>
+
+    <button
+      class="filter"
+      data-filter="interactive"
+    >
+      Interactivas
+    </button>
+
+    <button
+      class="filter"
+      data-filter="development"
+    >
+      Desarrollo
+    </button>
+
+    <button
+      class="filter"
+      data-filter="3d"
+    >
+      3D & Animación
+    </button>
+
+  </div>
+
+
+
+  <div class="project-grid">
+
+
+
+    <!-- =================================================
          ORO Y PAPEL
-      --------------------------------------------------- */
+    ================================================== -->
 
-      oro: {
+    <article
+      class="project-card featured"
+      data-category="ux interactive development"
+    >
 
-        title:
-          "Oro y papel: Un tesoro restringido",
+      <div class="project-media">
 
-        type:
-          "UX/UI · Interacción",
+        <img
+          src="https://img.youtube.com/vi/frSALwGp0d8/maxresdefault.jpg"
+          alt="Oro y Papel: Un tesoro restringido"
+        >
 
-        team:
-          "Equipo de 2",
+        <span class="project-label">
+          FEATURED · EXPERIENCIA DIGITAL
+        </span>
 
-        video:
-          "https://www.youtube.com/embed/frSALwGp0d8",
+        <div class="media-overlay">
+          <span>▶</span>
+        </div>
 
-        description: `
-
-          <p>
-            Experiencia digital interactiva que explora la relación
-            entre objetos heredados y adquiridos —representados
-            mediante anillos y libros— y cómo el acceso a estos
-            objetos se encuentra condicionado por el contexto y
-            el recorrido del usuario.
-          </p>
-
-          <p>
-            El proyecto fue desarrollado como una experiencia
-            interactiva dentro de Unity, buscando que el usuario
-            descubriera progresivamente la relación entre los
-            objetos, la información y los espacios disponibles.
-          </p>
-
-          <p>
-            <strong>Mi rol:</strong> Mi trabajo se centró
-            principalmente en la implementación de las
-            interacciones dentro de Unity: interacción y zoom
-            sobre los objetos, reproducción de audios, presentación
-            de información narrativa y control del acceso a las
-            diferentes zonas según el progreso del usuario y la
-            información previamente consultada.
-          </p>
-
-          <p>
-            El proyecto fue realizado en equipo con Isabella
-            Gallego Tachack. Isabella realizó los modelos 3D de
-            los libros y anillos, además de la cinemática inicial.
-          </p>
-
-        `,
-
-        tags: [
-          "Unity",
-          "UX/UI",
-          "Interacción",
-          "Narrativa",
-          "Audio"
-        ],
-
-        links: [
-
-          {
-            text: "Ver proyecto en Itch.io ↗",
-            url:
-              "https://emilymora.itch.io/oro-y-papel-un-tesoro-restringido"
-          },
-
-          {
-            text: "Ver video ↗",
-            url:
-              "https://youtu.be/frSALwGp0d8"
-          }
-
-        ]
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            UX/UI · Interacción
+          </span>
+
+          <span>
+            Equipo de 2
+          </span>
+
+        </div>
+
+
+        <h3>
+          Oro y papel: Un tesoro restringido
+        </h3>
+
+
+        <p class="project-summary">
+
+          Experiencia digital interactiva que explora la relación
+          entre objetos heredados y adquiridos y cómo el acceso
+          a estos objetos se encuentra condicionado por el
+          contexto y el recorrido del usuario.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>Unity</span>
+          <span>UX/UI</span>
+          <span>Interacción</span>
+          <span>Narrativa</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="oro"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          BOOMBYTE
-      --------------------------------------------------- */
+    ================================================== -->
 
-      boombyte: {
+    <article
+      class="project-card featured"
+      data-category="interactive development"
+    >
 
-        title:
-          "BoomByte",
+      <div class="project-media">
 
-        type:
-          "Realidad Virtual",
+        <img
+          src="https://img.youtube.com/vi/YilMMnaU37Q/maxresdefault.jpg"
+          alt="BoomByte - videojuego VR"
+        >
 
-        team:
-          "Equipo multidisciplinar",
+        <span class="project-label">
+          FEATURED · VR
+        </span>
 
-        video:
-          "https://www.youtube.com/embed/YilMMnaU37Q",
+        <div class="media-overlay">
+          <span>▶</span>
+        </div>
 
-        description: `
-
-          <p>
-            Videojuego de realidad virtual desarrollado para
-            Meta Quest 2 como parte de la conmemoración de los
-            25 años del programa de Ingeniería en Multimedia
-            de la Universidad Militar Nueva Granada.
-          </p>
-
-          <p>
-            El proyecto fue desarrollado en Unity utilizando
-            herramientas de realidad virtual e interacción para
-            construir una experiencia jugable dentro de un entorno
-            inmersivo.
-          </p>
-
-          <p>
-            <strong>Mi participación:</strong> trabajé en la
-            implementación de elementos de interacción, interfaces
-            y comportamiento de diferentes elementos dentro de la
-            experiencia, integrando los recursos multimedia
-            desarrollados por el equipo.
-          </p>
-
-          <p>
-            El proyecto involucró trabajo multidisciplinar para
-            integrar programación, diseño, interacción, elementos
-            visuales y experiencia de usuario dentro de Meta Quest 2.
-          </p>
-
-        `,
-
-        tags: [
-          "VR",
-          "Unity",
-          "UI",
-          "C#",
-          "Meta Quest 2",
-          "Interacción"
-        ],
-
-        links: [
-
-          {
-            text: "Ver video ↗",
-            url:
-              "https://youtu.be/YilMMnaU37Q"
-          }
-
-        ]
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            Realidad Virtual
+          </span>
+
+          <span>
+            Equipo multidisciplinar
+          </span>
+
+        </div>
+
+
+        <h3>
+          BoomByte
+        </h3>
+
+
+        <p class="project-summary">
+
+          Videojuego de realidad virtual desarrollado para
+          Meta Quest 2 como parte de la conmemoración de los
+          25 años del programa de Ingeniería en Multimedia.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>VR</span>
+          <span>Unity</span>
+          <span>UI</span>
+          <span>C#</span>
+          <span>Meta Quest 2</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="boombyte"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          AT-AT
-      --------------------------------------------------- */
+    ================================================== -->
 
-      atat: {
+    <article
+      class="project-card"
+      data-category="3d"
+    >
 
-        title:
-          "Modelado 3D AT-AT de Star Wars",
+      <div class="project-media image-media">
 
-        type:
-          "Modelado 3D",
+        <img
+          src="assets/images/at-at.jpg"
+          alt="Modelado 3D AT-AT de Star Wars"
+        >
 
-        team:
-          "Maya",
-
-        image:
-          "assets/images/at-at.jpg",
-
-        description: `
-
-          <p>
-            Proyecto de modelado 3D basado en un AT-AT del
-            universo Star Wars.
-          </p>
-
-          <p>
-            El trabajo se enfocó en la construcción de la
-            geometría, proporciones y detalles estructurales
-            del modelo, cuidando la coherencia visual y la
-            correcta organización para su posterior renderizado.
-          </p>
-
-        `,
-
-        tags: [
-          "Maya",
-          "3D",
-          "Modelado",
-          "Renderizado"
-        ],
-
-        links: []
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            Modelado 3D
+          </span>
+
+          <span>
+            Maya
+          </span>
+
+        </div>
+
+
+        <h3>
+          Modelado 3D AT-AT de Star Wars
+        </h3>
+
+
+        <p class="project-summary">
+
+          Proyecto de modelado 3D basado en un AT-AT del
+          universo Star Wars, enfocado en geometría,
+          proporciones y detalles estructurales.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>Maya</span>
+          <span>3D</span>
+          <span>Modelado</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="atat"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          IDLES
-      --------------------------------------------------- */
+    ================================================== -->
 
-      idles: {
+    <article
+      class="project-card"
+      data-category="interactive development 3d"
+    >
 
-        title:
-          "Idles de Animación para Videojuegos",
+      <div class="project-media video-media">
 
-        type:
-          "Animación · Game Dev",
+        <iframe
+          src="https://www.youtube.com/embed/CCgRhQHY7ic"
+          title="Idles de Animación para Videojuegos"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
 
-        team:
-          "Maya + Unity",
-
-        video:
-          "https://www.youtube.com/embed/CCgRhQHY7ic",
-
-        description: `
-
-          <p>
-            Proyecto enfocado en el estudio y desarrollo de
-            animaciones tipo <em>idle</em> para personajes de
-            videojuegos.
-          </p>
-
-          <p>
-            Se trabajó a partir de un modelo base proporcionado
-            por la universidad, realizando el análisis de
-            movimientos, tiempos y transiciones para lograr
-            animaciones naturales como respiración y reposo.
-          </p>
-
-          <p>
-            Las animaciones fueron creadas en Maya, posteriormente
-            horneadas (<em>baking</em>) e importadas a Unity,
-            donde se implementaron mediante un sistema de estados
-            controlado por programación en C#.
-          </p>
-
-          <p>
-            Se configuró el controlador de animaciones para
-            asociar distintos estados a teclas del teclado,
-            además de integrar colisiones mediante cápsulas para
-            asegurar el desplazamiento correcto del personaje
-            sobre el escenario sin atravesar el suelo.
-          </p>
-
-        `,
-
-        tags: [
-          "Maya",
-          "Unity",
-          "C#",
-          "Animación 3D"
-        ],
-
-        links: [
-
-          {
-            text: "🎮 Ver demo en Itch.io ↗",
-            url:
-              "https://emilymora.itch.io/demo-idles-emily-mora-llanos"
-          }
-
-        ]
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            Animación · Game Dev
+          </span>
+
+          <span>
+            Maya + Unity
+          </span>
+
+        </div>
+
+
+        <h3>
+          Idles de Animación para Videojuegos
+        </h3>
+
+
+        <p class="project-summary">
+
+          Proyecto enfocado en el estudio y desarrollo de
+          animaciones tipo idle para personajes de videojuegos.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>Maya</span>
+          <span>Unity</span>
+          <span>C#</span>
+          <span>Animación 3D</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="idles"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          A-LA-NA
-      --------------------------------------------------- */
+    ================================================== -->
 
-      alana: {
+    <article
+      class="project-card"
+      data-category="3d"
+    >
 
-        title:
-          "Corto Animado 2D A-la-na",
+      <div class="project-media video-media">
 
-        type:
-          "Animación 2D",
+        <iframe
+          src="https://www.youtube.com/embed/xfsx96AveSY"
+          title="Corto animado 2D A-la-na"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
 
-        team:
-          "Adobe Animate",
-
-        video:
-          "https://www.youtube.com/embed/xfsx96AveSY",
-
-        description: `
-
-          <p>
-            Corto animado realizado en formato filminuto.
-            El proceso incluyó storyboard, diseño de personajes
-            y escenarios, así como animación mediante ciclos
-            de caminata.
-          </p>
-
-          <p>
-            Los elementos gráficos fueron trabajados en
-            Illustrator y luego integrados y animados en
-            Adobe Animate.
-          </p>
-
-          <p>
-            La historia presenta la interacción entre una
-            pastora, una oveja y un pájaro que acompaña al
-            personaje principal.
-          </p>
-
-        `,
-
-        tags: [
-          "Illustrator",
-          "Adobe Animate",
-          "2D",
-          "Storyboard"
-        ],
-
-        links: []
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            Animación 2D
+          </span>
+
+          <span>
+            Adobe Animate
+          </span>
+
+        </div>
+
+
+        <h3>
+          Corto Animado 2D A-la-na
+        </h3>
+
+
+        <p class="project-summary">
+
+          Corto animado realizado en formato filminuto,
+          incluyendo storyboard, personajes, escenarios
+          y ciclos de caminata.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>Illustrator</span>
+          <span>Animate</span>
+          <span>2D</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="alana"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          ART DAYZ
-      --------------------------------------------------- */
+    ================================================== -->
 
-      artdayz: {
+    <article
+      class="project-card"
+      data-category="ux development"
+    >
 
-        title:
-          "Art Dayz – Plataforma Web para Artistas",
+      <div class="project-media image-media">
 
-        type:
-          "UX/UI · Web",
+        <img
+          src="assets/images/artdayz.jpg"
+          alt="Art Dayz"
+        >
 
-        team:
-          "Equipo de 3",
-
-        image:
-          "assets/images/artdayz.jpg",
-
-        description: `
-
-          <p>
-            Art Dayz es una plataforma web orientada a artistas,
-            enfocada en publicación de portafolios, monetización
-            de productos y oferta de servicios creativos.
-          </p>
-
-          <p>
-            <strong>Mi rol:</strong>
-          </p>
-
-          <ul class="project-list">
-
-            <li>
-              Gestión de pedidos
-            </li>
-
-            <li>
-              Carrito de compras
-            </li>
-
-            <li>
-              Visualización y cancelación de pedidos
-            </li>
-
-            <li>
-              Perfil de usuario y configuración de cuenta
-            </li>
-
-            <li>
-              Eliminación de cuenta
-            </li>
-
-            <li>
-              Página de soporte con chatbot básico
-            </li>
-
-          </ul>
-
-          <p>
-            El desarrollo se basó en prototipos diseñados en
-            Figma, priorizando una experiencia funcional y clara.
-          </p>
-
-        `,
-
-        tags: [
-          "Figma",
-          "HTML",
-          "CSS",
-          "UX/UI"
-        ],
-
-        links: [
-
-          {
-            text: "GitHub ↗",
-            url:
-              "https://github.com/Dannyb1718/Grupo2_Tecnologia.git"
-          }
-
-        ]
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            UX/UI · Web
+          </span>
+
+          <span>
+            Equipo de 3
+          </span>
+
+        </div>
+
+
+        <h3>
+          Art Dayz – Plataforma Web para Artistas
+        </h3>
+
+
+        <p class="project-summary">
+
+          Plataforma web orientada a artistas para publicación
+          de portafolios, monetización de productos y oferta
+          de servicios creativos.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>Figma</span>
+          <span>HTML</span>
+          <span>CSS</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="artdayz"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          REAL TIME
-      --------------------------------------------------- */
+    ================================================== -->
 
-      realtime: {
+    <article
+      class="project-card"
+      data-category="ux development"
+    >
 
-        title:
-          "Real Time Consulting Services SAS",
+      <div class="project-media image-media">
 
-        type:
-          "Web · UX/UI",
+        <img
+          src="assets/images/realtime.png"
+          alt="Real Time Consulting Services"
+        >
 
-        team:
-          "Cliente real",
-
-        image:
-          "assets/images/realtime.png",
-
-        description: `
-
-          <p>
-            Diseño y desarrollo visual de página web corporativa
-            para empresa enfocada en ciberseguridad y
-            ciberresiliencia.
-          </p>
-
-          <p>
-            Incluyó identidad visual, prototipos en Figma e
-            implementación en WordPress con secciones HTML
-            personalizadas.
-          </p>
-
-          <ul class="project-list">
-
-            <li>
-              Formularios de notificación de incidentes
-            </li>
-
-            <li>
-              Descargos de responsabilidad
-            </li>
-
-            <li>
-              Sección SOC
-            </li>
-
-            <li>
-              Portafolio de soluciones
-            </li>
-
-          </ul>
-
-        `,
-
-        tags: [
-          "WordPress",
-          "HTML",
-          "Figma",
-          "UX/UI"
-        ],
-
-        links: [
-
-          {
-            text: "🌐 Visitar sitio web ↗",
-            url:
-              "https://rt.com.co/"
-          }
-
-        ]
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
-         ALICE
-      --------------------------------------------------- */
+      <div class="project-content">
 
-      alice: {
+        <div class="project-topline">
 
-        title:
-          "Alice in Borderland – Animación 3D",
+          <span>
+            Web · UX/UI
+          </span>
 
-        type:
-          "Animación 3D",
+          <span>
+            Cliente real
+          </span>
 
-        team:
-          "Maya",
-
-        video:
-          "https://www.youtube.com/embed/-L9aTduN9uc",
-
-        description: `
-
-          <p>
-            Animación 3D basada en una escena de referencia
-            de la serie Alice in Borderland.
-          </p>
-
-          <p>
-            Me encargué de la reconstrucción del escenario,
-            animación del personaje y cámaras, pasando por las
-            etapas de blocking, splining y polish.
-          </p>
-
-          <p>
-            También realicé configuraciones técnicas para
-            optimizar el playback y evitar pixelación en el
-            video final.
-          </p>
-
-        `,
-
-        tags: [
-          "Maya",
-          "Animation",
-          "3D",
-          "Blocking",
-          "Splining",
-          "Polish"
-        ],
-
-        links: []
-
-      },
+        </div>
 
 
-      /* ---------------------------------------------------
+        <h3>
+          Real Time Consulting Services SAS
+        </h3>
+
+
+        <p class="project-summary">
+
+          Diseño y desarrollo visual de página web corporativa
+          para una empresa enfocada en ciberseguridad y
+          ciberresiliencia.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>WordPress</span>
+          <span>HTML</span>
+          <span>Figma</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="realtime"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         ALICE IN BORDERLAND
+    ================================================== -->
+
+    <article
+      class="project-card"
+      data-category="3d"
+    >
+
+      <div class="project-media video-media">
+
+        <iframe
+          src="https://www.youtube.com/embed/-L9aTduN9uc"
+          title="Alice in Borderland – Animación 3D"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+
+      </div>
+
+
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            Animación 3D
+          </span>
+
+          <span>
+            Maya
+          </span>
+
+        </div>
+
+
+        <h3>
+          Alice in Borderland – Animación 3D
+        </h3>
+
+
+        <p class="project-summary">
+
+          Animación 3D basada en una escena de referencia
+          de la serie Alice in Borderland.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>Maya</span>
+          <span>Animation</span>
+          <span>3D</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="alice"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          ASMR
-      --------------------------------------------------- */
+    ================================================== -->
 
-      asmr: {
+    <article
+      class="project-card"
+      data-category="interactive 3d"
+    >
 
-        title:
-          "ASMR Real Time – Experiencia Interactiva",
+      <div class="project-media video-media">
 
-        type:
-          "Experiencia interactiva",
+        <iframe
+          src="https://www.youtube.com/embed/0flWEsl5Rjg"
+          title="ASMR Real Time – Experiencia Interactiva"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
 
-        team:
-          "Equipo de 2",
-
-        video:
-          "https://www.youtube.com/embed/0flWEsl5Rjg",
-
-        description: `
-
-          <p>
-            Aplicación interactiva tipo juego diseñada para
-            transformar la experiencia ASMR en una interacción
-            activa.
-          </p>
-
-          <p>
-            Participé en la planificación, organización de
-            espacios, manejo de modelos 3D, animaciones en Maya
-            e integración en Unity mediante Animator.
-          </p>
-
-          <p>
-            También desarrollé videos interactivos —créditos y
-            narración— sincronizados con objetos y audio dentro
-            de Unity.
-          </p>
-
-        `,
-
-        tags: [
-          "Maya",
-          "Unity",
-          "DaVinci Resolve",
-          "Audio",
-          "Interacción"
-        ],
-
-        links: [
-
-          {
-            text: "GitHub ↗",
-            url:
-              "https://github.com/LymoEm/Proyecto-ASMR.git"
-          },
-
-          {
-            text: "Ver video ↗",
-            url:
-              "https://youtu.be/0flWEsl5Rjg"
-          }
-
-        ]
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            Experiencia interactiva
+          </span>
+
+          <span>
+            Equipo de 2
+          </span>
+
+        </div>
+
+
+        <h3>
+          ASMR Real Time – Experiencia Interactiva
+        </h3>
+
+
+        <p class="project-summary">
+
+          Aplicación interactiva tipo juego diseñada para
+          transformar la experiencia ASMR en una interacción activa.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>Maya</span>
+          <span>Unity</span>
+          <span>DaVinci Resolve</span>
+          <span>Audio</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="asmr"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          POLYMERGE
-      --------------------------------------------------- */
+    ================================================== -->
 
-      polymerge: {
+    <article
+      class="project-card"
+      data-category="interactive 3d"
+    >
 
-        title:
-          "Polymerge – Videojuego Educativo",
+      <div class="project-media video-media">
 
-        type:
-          "Videojuego educativo",
+        <iframe
+          src="https://www.youtube.com/embed/Z73o503LE8k"
+          title="Polymerge – Videojuego Educativo"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
 
-        team:
-          "Equipo de 7",
-
-        video:
-          "https://www.youtube.com/embed/Z73o503LE8k",
-
-        description: `
-
-          <p>
-            Videojuego educativo enfocado en la enseñanza de
-            conceptos básicos de química y formación de polímeros.
-          </p>
-
-          <p>
-            Mi rol principal fue el modelado 3D de átomos y
-            uniones, investigando referencias químicas para
-            respetar ángulos y estructuras.
-          </p>
-
-          <p>
-            Trabajé en coordinación con el equipo de Unity para
-            asegurar una correcta integración de animaciones y
-            comportamiento visual.
-          </p>
-
-        `,
-
-        tags: [
-          "Maya",
-          "Unity",
-          "3D",
-          "Modelado"
-        ],
-
-        links: []
-
-      },
+      </div>
 
 
-      /* ---------------------------------------------------
+      <div class="project-content">
+
+        <div class="project-topline">
+
+          <span>
+            Videojuego educativo
+          </span>
+
+          <span>
+            Equipo de 7
+          </span>
+
+        </div>
+
+
+        <h3>
+          Polymerge – Videojuego Educativo
+        </h3>
+
+
+        <p class="project-summary">
+
+          Videojuego educativo enfocado en la enseñanza de
+          conceptos básicos de química y formación de polímeros.
+
+        </p>
+
+
+        <div class="project-tags">
+
+          <span>Maya</span>
+          <span>Unity</span>
+          <span>3D</span>
+
+        </div>
+
+
+        <button
+          class="project-more detail-btn"
+          data-project="polymerge"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================================
          LEGO
-      --------------------------------------------------- */
+    ================================================== -->
 
-      lego: {
+    <article
+      class="project-card"
+      data-category="3d"
+    >
 
-        title:
-          "Personaje Lego – Modelado y Render 3D",
+      <div class="project-media image-media">
 
-        type:
-          "Modelado 3D",
+        <img
+          src="assets/images/lego.jpg"
+          alt="Personaje Lego – Modelado y Render 3D"
+        >
 
-        team:
-          "Maya + Blender",
-
-        image:
-          "assets/images/lego.jpg",
-
-        description: `
-
-          <p>
-            Modelado 3D de personaje estilo Lego inspirado en
-            K-pop Demon Hunters.
-          </p>
-
-          <p>
-            El modelo principal se desarrolló en Maya y
-            elementos como el cabello en Blender.
-            El texturizado se realizó con ilustraciones propias
-            aplicadas mediante Hypershader.
-          </p>
-
-          <p>
-            Incluyó creación de escena tipo tarima, iluminación
-            y render final.
-          </p>
-
-        `,
-
-        tags: [
-          "Maya",
-          "Blender",
-          "Render",
-          "Modelado 3D",
-          "Texturizado"
-        ],
-
-        links: []
-
-      }
-
-    };
+      </div>
 
 
+      <div class="project-content">
 
-    /* =====================================================
-       ABRIR PROYECTO
-    ====================================================== */
+        <div class="project-topline">
 
-    function openProject(projectId) {
+          <span>
+            Modelado 3D
+          </span>
 
+          <span>
+            Maya + Blender
+          </span>
 
-      const project = projects[projectId];
-
-      if (!project) {
-        return;
-      }
-
-
-      const modal =
-        document.getElementById("projectModal");
+        </div>
 
 
-      const media =
-        document.getElementById("modalMedia");
+        <h3>
+          Personaje Lego – Modelado y Render 3D
+        </h3>
 
 
-      const topline =
-        document.getElementById("modalTopline");
+        <p class="project-summary">
+
+          Modelado 3D de personaje estilo Lego inspirado
+          en K-pop Demon Hunters.
+
+        </p>
 
 
-      const title =
-        document.getElementById("modalTitle");
+        <div class="project-tags">
+
+          <span>Maya</span>
+          <span>Blender</span>
+          <span>Render</span>
+
+        </div>
 
 
-      const description =
-        document.getElementById("modalDescription");
+        <button
+          class="project-more detail-btn"
+          data-project="lego"
+        >
+          Ver detalles
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </article>
 
 
-      const tags =
-        document.getElementById("modalTags");
+  </div>
+
+</section>
 
 
-      const links =
-        document.getElementById("modalLinks");
+
+<!-- =====================================================
+     CV
+====================================================== -->
+
+<section class="section cv-section">
+
+  <div class="cv-card">
+
+    <div>
+
+      <span class="eyebrow">
+        ¿QUIERES CONOCER MÁS?
+      </span>
+
+      <h2>
+        También puedes revisar mi
+        <span>hoja de vida.</span>
+      </h2>
+
+      <p>
+        Conoce mi formación, herramientas, experiencia y proyectos
+        con mayor detalle.
+      </p>
+
+    </div>
 
 
-      /* ---------------------------------------------------
-         MEDIA
-      --------------------------------------------------- */
+    <a
+      href="assets/CV-Emily-Mora-Llanos.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn primary"
+    >
+      Abrir CV ↗
+    </a>
 
-      if (project.video) {
+  </div>
 
-        media.innerHTML = `
-
-          <iframe
-            class="modal-video"
-            src="${project.video}?autoplay=1"
-            title="${project.title}"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-
-        `;
-
-      }
-
-      else if (project.image) {
-
-        media.innerHTML = `
-
-          <img
-            src="${project.image}"
-            alt="${project.title}"
-          >
-
-        `;
-
-      }
+</section>
 
 
-      /* ---------------------------------------------------
-         TEXTO SUPERIOR
-      --------------------------------------------------- */
 
-      topline.innerHTML = `
+<!-- =====================================================
+     EDUCACIÓN
+====================================================== -->
 
-        <span>
-          ${project.type}
-        </span>
+<section class="section education-section">
 
-        <span>
-          ${project.team}
-        </span>
+  <div class="section-heading">
+
+    <span class="section-number">
+      04
+    </span>
+
+    <div>
+
+      <span class="eyebrow">
+        FORMACIÓN
+      </span>
+
+      <h2>
+        Formación que complementa
+        <span>mi perfil.</span>
+      </h2>
+
+    </div>
+
+  </div>
+
+
+  <div class="education-grid">
+
+    <article class="education-card">
+
+      <span>
+        2022 – Actualidad
+      </span>
+
+      <h3>
+        Ingeniería en Multimedia
+      </h3>
+
+      <p>
+        Universidad Militar Nueva Granada
+      </p>
+
+    </article>
+
+
+    <article class="education-card">
+
+      <span>
+        2021
+      </span>
+
+      <h3>
+        Bachiller Académico
+      </h3>
+
+      <p>
+        Colegio Calasanz de Pereira
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer id="contacto">
+
+  <div class="footer-content">
+
+    <span class="eyebrow">
+      CONTACTO
+    </span>
+
+    <h2>
+      Hagamos que una idea se
+      <span>convierta en experiencia.</span>
+    </h2>
+
+    <p>
+      Puedes encontrarme en mis diferentes perfiles o escribirme
+      directamente por correo.
+    </p>
+
+
+    <div class="contact-links">
+
+      <a href="mailto:emily.mora.llanos@gmail.com">
+        ✉ emily.mora.llanos@gmail.com ↗
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/emily-mora-40b7393aa/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn ↗
+      </a>
+
+      <a
+        href="https://github.com/LymoEm"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub ↗
+      </a>
+
+      <a
+        href="https://www.instagram.com/lymo_em/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram ↗
+      </a>
+
+      <a
+        href="https://emilymora.itch.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Itch.io ↗
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 Emily Mora Llanos
+    </span>
+
+    <span>
+      Ingeniera en Multimedia · UX/UI
+    </span>
+
+  </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     MODAL DE PROYECTOS
+====================================================== -->
+
+<div
+  class="project-modal"
+  id="projectModal"
+  aria-hidden="true"
+>
+
+  <div class="modal-backdrop"></div>
+
+
+  <div
+    class="modal-window"
+    role="dialog"
+    aria-modal="true"
+  >
+
+    <button
+      class="modal-close"
+      id="modalClose"
+      aria-label="Cerrar proyecto"
+    >
+      ×
+    </button>
+
+
+    <div
+      class="modal-content"
+      id="modalContent"
+    >
+
+      <!-- JavaScript coloca aquí la información -->
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     TODO QUEDA DENTRO DEL HTML
+====================================================== -->
+
+<script>
+
+const projectData = {
+
+  oro: {
+
+    category: "UX/UI · Interacción · Equipo de 2",
+
+    title: "Oro y papel: Un tesoro restringido",
+
+    media: `
+      <img
+        src="https://img.youtube.com/vi/frSALwGp0d8/maxresdefault.jpg"
+        alt="Oro y Papel"
+      >
+    `,
+
+    description: `
+
+      <p>
+        Experiencia digital interactiva que explora la relación
+        entre objetos heredados y adquiridos —representados
+        mediante anillos y libros— y cómo el acceso a estos
+        objetos se encuentra condicionado por el contexto y el
+        recorrido del usuario.
+      </p>
+
+      <p>
+        Mi trabajo se centró principalmente en la implementación
+        de las interacciones dentro de Unity: interacción y zoom
+        sobre los objetos, reproducción de audios, presentación
+        de información narrativa y control del acceso a las
+        diferentes zonas según el progreso del usuario y la
+        información previamente consultada.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Unity</span>
+      <span>UX/UI</span>
+      <span>Interacción</span>
+      <span>Narrativa</span>
+    `,
+
+    links: `
+
+      <a
+        href="https://emilymora.itch.io/oro-y-papel-un-tesoro-restringido"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn primary"
+      >
+        Ver proyecto ↗
+      </a>
+
+      <a
+        href="https://youtu.be/frSALwGp0d8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn ghost"
+      >
+        Ver video ↗
+      </a>
+
+    `
+
+  },
+
+
+  boombyte: {
+
+    category: "Realidad Virtual · Equipo multidisciplinar",
+
+    title: "BoomByte",
+
+    media: `
+      <img
+        src="https://img.youtube.com/vi/YilMMnaU37Q/maxresdefault.jpg"
+        alt="BoomByte"
+      >
+    `,
+
+    description: `
+
+      <p>
+        Videojuego de realidad virtual desarrollado para Meta Quest
+        2 como parte de la conmemoración de los 25 años del
+        programa de Ingeniería en Multimedia de la Universidad
+        Militar Nueva Granada.
+      </p>
+
+      <p>
+        El proyecto fue desarrollado en Unity utilizando
+        herramientas de realidad virtual e interacción para
+        construir una experiencia jugable dentro de un entorno
+        inmersivo.
+      </p>
+
+      <p>
+        Participé en la implementación de elementos de interacción,
+        interfaces y comportamiento de los elementos dentro de la
+        experiencia, integrando los diferentes recursos multimedia
+        del proyecto.
+      </p>
+
+    `,
+
+    tags: `
+      <span>VR</span>
+      <span>Unity</span>
+      <span>UI</span>
+      <span>C#</span>
+      <span>Meta Quest 2</span>
+    `,
+
+    links: `
+
+      <a
+        href="https://youtu.be/YilMMnaU37Q"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn primary"
+      >
+        Ver video ↗
+      </a>
+
+    `
+
+  },
+
+
+  atat: {
+
+    category: "Modelado 3D · Maya",
+
+    title: "Modelado 3D AT-AT de Star Wars",
+
+    media: `
+      <img
+        src="assets/images/at-at.jpg"
+        alt="AT-AT"
+      >
+    `,
+
+    description: `
+
+      <p>
+        Proyecto de modelado 3D basado en un AT-AT del universo
+        Star Wars.
+      </p>
+
+      <p>
+        El trabajo se enfocó en la construcción de la geometría,
+        proporciones y detalles estructurales del modelo,
+        cuidando la coherencia visual y la correcta organización
+        para su posterior renderizado.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Maya</span>
+      <span>3D</span>
+      <span>Modelado</span>
+    `,
+
+    links: ``
+
+  },
+
+
+  idles: {
+
+    category: "Animación · Game Dev · Maya + Unity",
+
+    title: "Idles de Animación para Videojuegos",
+
+    media: `
+      <iframe
+        src="https://www.youtube.com/embed/CCgRhQHY7ic"
+        title="Idles de Animación para Videojuegos"
+        allowfullscreen
+      ></iframe>
+    `,
+
+    description: `
+
+      <p>
+        Proyecto enfocado en el estudio y desarrollo de
+        animaciones tipo <em>idle</em> para personajes de
+        videojuegos.
+      </p>
+
+      <p>
+        Se trabajó a partir de un modelo base proporcionado por
+        la universidad, realizando el análisis de movimientos,
+        tiempos y transiciones para lograr animaciones naturales
+        como respiración y reposo.
+      </p>
+
+      <p>
+        Las animaciones fueron creadas en Maya, posteriormente
+        horneadas (<em>baking</em>) e importadas a Unity, donde
+        se implementaron mediante un sistema de estados
+        controlado por programación en C#.
+      </p>
+
+      <p>
+        Se configuró el controlador de animaciones para asociar
+        distintos estados a teclas del teclado, además de
+        integrar colisiones mediante cápsulas para asegurar el
+        desplazamiento correcto del personaje sobre el escenario.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Maya</span>
+      <span>Unity</span>
+      <span>C#</span>
+      <span>Animación 3D</span>
+    `,
+
+    links: `
+
+      <a
+        href="https://emilymora.itch.io/demo-idles-emily-mora-llanos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn primary"
+      >
+        🎮 Ver demo en Itch.io ↗
+      </a>
+
+    `
+
+  },
+
+
+  alana: {
+
+    category: "Animación 2D · Adobe Animate",
+
+    title: "Corto Animado 2D A-la-na",
+
+    media: `
+      <iframe
+        src="https://www.youtube.com/embed/xfsx96AveSY"
+        title="Corto animado 2D A-la-na"
+        allowfullscreen
+      ></iframe>
+    `,
+
+    description: `
+
+      <p>
+        Corto animado realizado en formato filminuto.
+      </p>
+
+      <p>
+        El proceso incluyó storyboard, diseño de personajes y
+        escenarios, así como animación mediante ciclos de caminata.
+      </p>
+
+      <p>
+        Los elementos gráficos fueron trabajados en Illustrator
+        y luego integrados y animados en Adobe Animate.
+      </p>
+
+      <p>
+        La historia presenta la interacción entre una pastora,
+        una oveja y un pájaro que acompaña al personaje principal.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Illustrator</span>
+      <span>Animate</span>
+      <span>2D</span>
+    `,
+
+    links: ``
+
+  },
+
+
+  artdayz: {
+
+    category: "UX/UI · Web · Equipo de 3",
+
+    title: "Art Dayz – Plataforma Web para Artistas",
+
+    media: `
+      <img
+        src="assets/images/artdayz.jpg"
+        alt="Art Dayz"
+      >
+    `,
+
+    description: `
+
+      <p>
+        Art Dayz es una plataforma web orientada a artistas,
+        enfocada en publicación de portafolios, monetización de
+        productos y oferta de servicios creativos.
+      </p>
+
+      <p>
+        <strong>Mi rol:</strong>
+      </p>
+
+      <ul>
+        <li>Gestión de pedidos</li>
+        <li>Carrito de compras</li>
+        <li>Visualización y cancelación de pedidos</li>
+        <li>Perfil de usuario y configuración de cuenta</li>
+        <li>Eliminación de cuenta</li>
+        <li>Página de soporte con chatbot básico</li>
+      </ul>
+
+      <p>
+        El desarrollo se basó en prototipos diseñados en Figma,
+        priorizando una experiencia funcional y clara.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Figma</span>
+      <span>HTML</span>
+      <span>CSS</span>
+    `,
+
+    links: `
+
+      <a
+        href="https://github.com/Dannyb1718/Grupo2_Tecnologia.git"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn primary"
+      >
+        GitHub ↗
+      </a>
+
+    `
+
+  },
+
+
+  realtime: {
+
+    category: "Web · UX/UI · Cliente real",
+
+    title: "Real Time Consulting Services SAS",
+
+    media: `
+      <img
+        src="assets/images/realtime.png"
+        alt="Real Time Consulting Services"
+      >
+    `,
+
+    description: `
+
+      <p>
+        Diseño y desarrollo visual de página web corporativa
+        para empresa enfocada en ciberseguridad y ciberresiliencia.
+      </p>
+
+      <p>
+        Incluyó identidad visual, prototipos en Figma e
+        implementación en WordPress con secciones HTML
+        personalizadas.
+      </p>
+
+      <ul>
+        <li>Formularios de notificación de incidentes</li>
+        <li>Descargos de responsabilidad</li>
+        <li>Sección SOC</li>
+        <li>Portafolio de soluciones</li>
+      </ul>
+
+    `,
+
+    tags: `
+      <span>WordPress</span>
+      <span>HTML</span>
+      <span>Figma</span>
+    `,
+
+    links: `
+
+      <a
+        href="https://rt.com.co/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn primary"
+      >
+        🌐 Visitar sitio web ↗
+      </a>
+
+    `
+
+  },
+
+
+  alice: {
+
+    category: "Animación 3D · Maya",
+
+    title: "Alice in Borderland – Animación 3D",
+
+    media: `
+      <iframe
+        src="https://www.youtube.com/embed/-L9aTduN9uc"
+        title="Alice in Borderland – Animación 3D"
+        allowfullscreen
+      ></iframe>
+    `,
+
+    description: `
+
+      <p>
+        Animación 3D basada en una escena de referencia de la
+        serie Alice in Borderland.
+      </p>
+
+      <p>
+        Me encargué de la reconstrucción del escenario,
+        animación del personaje y cámaras, pasando por las
+        etapas de blocking, splining y polish.
+      </p>
+
+      <p>
+        También realicé configuraciones técnicas para optimizar
+        el playback y evitar pixelación en el video final.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Maya</span>
+      <span>Animation</span>
+      <span>3D</span>
+    `,
+
+    links: ``
+
+  },
+
+
+  asmr: {
+
+    category: "Experiencia interactiva · Equipo de 2",
+
+    title: "ASMR Real Time – Experiencia Interactiva",
+
+    media: `
+      <iframe
+        src="https://www.youtube.com/embed/0flWEsl5Rjg"
+        title="ASMR Real Time"
+        allowfullscreen
+      ></iframe>
+    `,
+
+    description: `
+
+      <p>
+        Aplicación interactiva tipo juego diseñada para
+        transformar la experiencia ASMR en una interacción activa.
+      </p>
+
+      <p>
+        Participé en la planificación, organización de espacios,
+        manejo de modelos 3D, animaciones en Maya e integración
+        en Unity mediante Animator.
+      </p>
+
+      <p>
+        También desarrollé videos interactivos —créditos y
+        narración— sincronizados con objetos y audio dentro de Unity.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Maya</span>
+      <span>Unity</span>
+      <span>DaVinci Resolve</span>
+      <span>Audio</span>
+    `,
+
+    links: `
+
+      <a
+        href="https://github.com/LymoEm/Proyecto-ASMR.git"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn primary"
+      >
+        GitHub ↗
+      </a>
+
+    `
+
+  },
+
+
+  polymerge: {
+
+    category: "Videojuego educativo · Equipo de 7",
+
+    title: "Polymerge – Videojuego Educativo",
+
+    media: `
+      <iframe
+        src="https://www.youtube.com/embed/Z73o503LE8k"
+        title="Polymerge"
+        allowfullscreen
+      ></iframe>
+    `,
+
+    description: `
+
+      <p>
+        Videojuego educativo enfocado en la enseñanza de
+        conceptos básicos de química y formación de polímeros.
+      </p>
+
+      <p>
+        Mi rol principal fue el modelado 3D de átomos y uniones,
+        investigando referencias químicas para respetar ángulos
+        y estructuras.
+      </p>
+
+      <p>
+        Trabajé en coordinación con el equipo de Unity para
+        asegurar una correcta integración de animaciones y
+        comportamiento visual.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Maya</span>
+      <span>Unity</span>
+      <span>3D</span>
+    `,
+
+    links: ``
+
+  },
+
+
+  lego: {
+
+    category: "Modelado 3D · Maya + Blender",
+
+    title: "Personaje Lego – Modelado y Render 3D",
+
+    media: `
+      <img
+        src="assets/images/lego.jpg"
+        alt="Personaje Lego"
+      >
+    `,
+
+    description: `
+
+      <p>
+        Modelado 3D de personaje estilo Lego inspirado en
+        K-pop Demon Hunters.
+      </p>
+
+      <p>
+        El modelo principal se desarrolló en Maya y elementos
+        como el cabello en Blender.
+      </p>
+
+      <p>
+        El texturizado se realizó con ilustraciones propias
+        aplicadas mediante Hypershader.
+      </p>
+
+      <p>
+        Incluyó creación de escena tipo tarima, iluminación
+        y render final.
+      </p>
+
+    `,
+
+    tags: `
+      <span>Maya</span>
+      <span>Blender</span>
+      <span>Render</span>
+    `,
+
+    links: ``
+
+  }
+
+};
+
+
+
+/* =====================================================
+   ELEMENTOS DEL MODAL
+====================================================== */
+
+const modal = document.getElementById("projectModal");
+
+const modalContent =
+  document.getElementById("modalContent");
+
+const modalClose =
+  document.getElementById("modalClose");
+
+
+
+/* =====================================================
+   ABRIR PROYECTO
+====================================================== */
+
+document
+  .querySelectorAll(".detail-btn")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const projectId =
+        button.dataset.project;
+
+      const project =
+        projectData[projectId];
+
+      if (!project) return;
+
+
+      modalContent.innerHTML = `
+
+        <div class="modal-media">
+
+          ${project.media}
+
+        </div>
+
+
+        <div class="modal-info">
+
+          <span class="eyebrow">
+            ${project.category}
+          </span>
+
+
+          <h2>
+            ${project.title}
+          </h2>
+
+
+          <div class="modal-description">
+
+            ${project.description}
+
+          </div>
+
+
+          <div class="project-tags">
+
+            ${project.tags}
+
+          </div>
+
+
+          <div class="modal-links">
+
+            ${project.links}
+
+          </div>
+
+        </div>
 
       `;
 
 
-      /* ---------------------------------------------------
-         TÍTULO
-      --------------------------------------------------- */
-
-      title.textContent =
-        project.title;
-
-
-      /* ---------------------------------------------------
-         DESCRIPCIÓN
-      --------------------------------------------------- */
-
-      description.innerHTML =
-        project.description;
-
-
-      /* ---------------------------------------------------
-         TAGS
-      --------------------------------------------------- */
-
-      tags.innerHTML =
-        project.tags
-          .map(tag => `<span>${tag}</span>`)
-          .join("");
-
-
-      /* ---------------------------------------------------
-         LINKS
-      --------------------------------------------------- */
-
-      links.innerHTML =
-        project.links
-          .map(link => `
-
-            <a
-              class="modal-link"
-              href="${link.url}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ${link.text}
-            </a>
-
-          `)
-          .join("");
-
-
-      /* ---------------------------------------------------
-         MOSTRAR MODAL
-      --------------------------------------------------- */
-
-      modal.classList.add("show");
+      modal.classList.add("active");
 
       modal.setAttribute(
         "aria-hidden",
@@ -4427,145 +2207,169 @@
         "modal-open"
       );
 
+    });
+
+  });
+
+
+
+/* =====================================================
+   CERRAR MODAL
+====================================================== */
+
+function closeModal() {
+
+  modal.classList.remove("active");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+}
+
+
+
+/* BOTÓN X */
+
+modalClose.addEventListener(
+  "click",
+  closeModal
+);
+
+
+
+/* CLIC FUERA */
+
+document
+  .querySelector(".modal-backdrop")
+  .addEventListener(
+    "click",
+    closeModal
+  );
+
+
+
+/* ESC */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape" &&
+      modal.classList.contains("active")
+    ) {
+
+      closeModal();
+
     }
 
+  }
+);
 
 
-    /* =====================================================
-       CERRAR PROYECTO
-    ====================================================== */
 
-    function closeProject() {
+/* =====================================================
+   FILTROS
+====================================================== */
 
+const filters =
+  document.querySelectorAll(".filter");
 
-      const modal =
-        document.getElementById("projectModal");
-
-
-      const media =
-        document.getElementById("modalMedia");
+const projectCards =
+  document.querySelectorAll(".project-card");
 
 
-      modal.classList.remove("show");
+filters.forEach(filter => {
 
-      modal.setAttribute(
-        "aria-hidden",
-        "true"
+  filter.addEventListener(
+    "click",
+    () => {
+
+      filters.forEach(item =>
+        item.classList.remove("active")
       );
 
-      document.body.classList.remove(
-        "modal-open"
-      );
+      filter.classList.add("active");
 
 
-      /*
-       * Se elimina el iframe al cerrar.
-       * Así el video deja de reproducirse.
-       */
-
-      media.innerHTML = "";
-
-    }
+      const category =
+        filter.dataset.filter;
 
 
+      projectCards.forEach(card => {
 
-    /* =====================================================
-       ESC PARA CERRAR
-    ====================================================== */
+        if (category === "all") {
 
-    document.addEventListener(
-      "keydown",
-      function(event) {
+          card.style.display = "";
 
-        if (
-          event.key === "Escape"
-          &&
-          document
-            .getElementById("projectModal")
-            .classList
-            .contains("show")
-        ) {
-
-          closeProject();
+          return;
 
         }
 
-      }
-    );
+
+        const categories =
+          card.dataset.category.split(" ");
+
+
+        if (
+          categories.includes(category)
+        ) {
+
+          card.style.display = "";
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+    }
+  );
+
+});
 
 
 
-    /* =====================================================
-       FILTROS
-    ====================================================== */
+/* =====================================================
+   EVITAR SCROLL CON MODAL ABIERTO
+====================================================== */
 
-    const filters =
-      document.querySelectorAll(".filter");
+window.addEventListener(
+  "wheel",
+  event => {
 
+    if (
+      modal.classList.contains("active")
+    ) {
 
-    const projectCards =
-      document.querySelectorAll(".project-card");
+      const windowElement =
+        document.querySelector(".modal-window");
 
+      if (
+        windowElement &&
+        windowElement.contains(event.target)
+      ) {
 
-    filters.forEach(
-      filter => {
-
-        filter.addEventListener(
-          "click",
-          function() {
-
-
-            filters.forEach(
-              item =>
-                item.classList.remove("active")
-            );
-
-
-            this.classList.add("active");
-
-
-            const selected =
-              this.dataset.filter;
-
-
-            projectCards.forEach(
-              card => {
-
-
-                if (
-                  selected === "all"
-                  ||
-                  card.dataset.category
-                    .split(" ")
-                    .includes(selected)
-                ) {
-
-                  card.classList.remove(
-                    "hidden"
-                  );
-
-                }
-
-                else {
-
-                  card.classList.add(
-                    "hidden"
-                  );
-
-                }
-
-              }
-            );
-
-          }
-        );
+        return;
 
       }
-    );
 
-  </script>
+    }
+
+  },
+  { passive: true }
+);
+
+</script>
 
 
 </body>
-
 </html>
