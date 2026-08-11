@@ -1,4 +1,3 @@
-```css
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 
@@ -193,6 +192,12 @@ h2 span {
   align-items: center;
 
   gap: 40px;
+}
+
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -393,8 +398,6 @@ h2 span {
     infinite;
 }
 
-
-/* Solo tarjeta UX/UI */
 
 .floating-card {
   position: absolute;
@@ -828,6 +831,26 @@ h2 span {
 .video-thumbnail img {
   transform:
     scale(1.04);
+}
+
+
+/* =================================================
+   ORO Y PAPEL
+================================================= */
+
+.oro-media {
+  background:
+    linear-gradient(
+      145deg,
+      #15100a,
+      #3c2b13
+    );
+}
+
+
+.oro-media img {
+  object-position:
+    center center;
 }
 
 
@@ -1395,19 +1418,14 @@ h2 span {
   flex-wrap: wrap;
 
   gap: 15px;
+
+  margin-top: 22px;
 }
 
 
 /* =================================================
    SCROLL ANIMATION
 ================================================= */
-
-/*
-  IMPORTANTE:
-  Los elementos NO empiezan ocultos.
-  La clase .reveal solamente añade una pequeña
-  animación después de que el elemento es detectado.
-*/
 
 .reveal {
   opacity: 1;
@@ -1585,4 +1603,3 @@ h2 span {
   }
 
 }
-```
