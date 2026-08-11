@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,6 +33,7 @@
       <a
         href="assets/CV-Emily-Mora-Llanos.pdf"
         target="_blank"
+        rel="noopener noreferrer"
         class="nav-cv"
       >
         CV ↗
@@ -74,6 +76,7 @@
           <a
             href="assets/CV-Emily-Mora-Llanos.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             class="btn ghost"
           >
             Ver CV
@@ -102,8 +105,7 @@
           class="profile-illustration"
         >
 
-        <!-- Se eliminó completamente la tarjeta "Interactive" -->
-
+        <!-- Solo se conserva UX/UI -->
         <div class="floating-card card-one">
           UX/UI <span>✦</span>
         </div>
@@ -136,9 +138,9 @@
       <div class="about-grid">
 
         <p>
-          Soy estudiante de Ingeniería en Multimedia con interés en
-          diseño UX/UI, desarrollo web, animación, modelado 3D y
-          experiencias interactivas.
+          Soy estudiante de Ingeniería en Multimedia con interés en diseño
+          UX/UI, desarrollo web, animación, modelado 3D y experiencias
+          interactivas.
         </p>
 
         <p>
@@ -301,38 +303,23 @@
 
       <div class="filters">
 
-        <button
-          class="filter active"
-          data-filter="all"
-        >
+        <button class="filter active" data-filter="all">
           Todos
         </button>
 
-        <button
-          class="filter"
-          data-filter="ux"
-        >
+        <button class="filter" data-filter="ux">
           UX/UI
         </button>
 
-        <button
-          class="filter"
-          data-filter="interactive"
-        >
+        <button class="filter" data-filter="interactive">
           Interactivas
         </button>
 
-        <button
-          class="filter"
-          data-filter="development"
-        >
+        <button class="filter" data-filter="development">
           Desarrollo
         </button>
 
-        <button
-          class="filter"
-          data-filter="3d"
-        >
+        <button class="filter" data-filter="3d">
           3D & Animación
         </button>
 
@@ -342,9 +329,7 @@
       <div class="project-grid">
 
 
-        <!-- ================================================= -->
-        <!-- BOOMBYTE -->
-        <!-- ================================================= -->
+        <!-- ================= BOOMBYTE ================= -->
 
         <article
           class="project-card featured"
@@ -403,9 +388,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- AT-AT -->
-        <!-- ================================================= -->
+        <!-- ================= AT-AT ================= -->
 
         <article
           class="project-card"
@@ -455,9 +438,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- IDLES -->
-        <!-- ================================================= -->
+        <!-- ================= IDLES ================= -->
 
         <article
           class="project-card"
@@ -510,9 +491,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- A-LA-NA -->
-        <!-- ================================================= -->
+        <!-- ================= A-LA-NA ================= -->
 
         <article
           class="project-card"
@@ -565,9 +544,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- ART DAYZ -->
-        <!-- ================================================= -->
+        <!-- ================= ART DAYZ ================= -->
 
         <article
           class="project-card"
@@ -616,9 +593,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- REAL TIME -->
-        <!-- ================================================= -->
+        <!-- ================= REAL TIME ================= -->
 
         <article
           class="project-card"
@@ -667,9 +642,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- ALICE -->
-        <!-- ================================================= -->
+        <!-- ================= ALICE ================= -->
 
         <article
           class="project-card"
@@ -722,9 +695,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- ASMR -->
-        <!-- ================================================= -->
+        <!-- ================= ASMR ================= -->
 
         <article
           class="project-card"
@@ -777,9 +748,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- POLYMERGE -->
-        <!-- ================================================= -->
+        <!-- ================= POLYMERGE ================= -->
 
         <article
           class="project-card"
@@ -832,9 +801,7 @@
         </article>
 
 
-        <!-- ================================================= -->
-        <!-- LEGO -->
-        <!-- ================================================= -->
+        <!-- ================= LEGO ================= -->
 
         <article
           class="project-card"
@@ -882,6 +849,7 @@
 
         </article>
 
+
       </div>
 
     </section>
@@ -914,6 +882,7 @@
         <a
           href="assets/CV-Emily-Mora-Llanos.pdf"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn primary"
         >
           Abrir CV ↗
@@ -926,9 +895,7 @@
   </main>
 
 
-  <!-- ================================================= -->
-  <!-- MODAL DINÁMICO -->
-  <!-- ================================================= -->
+  <!-- ================= MODAL ================= -->
 
   <div
     class="modal"
@@ -938,7 +905,12 @@
 
     <div class="modal-backdrop"></div>
 
-    <div class="modal-box">
+    <div
+      class="modal-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
 
       <button
         class="modal-close"
@@ -947,43 +919,32 @@
         ×
       </button>
 
-
       <span
         class="eyebrow"
         id="modal-category"
-      >
-      </span>
-
+      ></span>
 
       <h2 id="modal-title"></h2>
-
 
       <div
         class="modal-body"
         id="modal-description"
-      >
-      </div>
-
+      ></div>
 
       <div
         class="modal-tags"
         id="modal-tags"
-      >
-      </div>
-
+      ></div>
 
       <div
         class="modal-video"
         id="modal-video"
-      >
-      </div>
-
+      ></div>
 
       <div
         class="modal-links"
         id="modal-links"
-      >
-      </div>
+      ></div>
 
     </div>
 
@@ -1056,9 +1017,7 @@
   </footer>
 
 
-  <!-- ================================================= -->
-  <!-- JAVASCRIPT -->
-  <!-- ================================================= -->
+  <!-- ================= JAVASCRIPT ================= -->
 
   <script>
 
@@ -1424,13 +1383,17 @@
 
         cards.forEach(card => {
 
-          const categories = card.dataset.category || "";
+          const categories =
+            card.dataset.category || "";
 
           const visible =
             selected === "all" ||
-            categories.includes(selected);
+            categories.split(" ").includes(selected);
 
-          card.classList.toggle("hidden", !visible);
+          card.classList.toggle(
+            "hidden",
+            !visible
+          );
 
         });
 
@@ -1467,9 +1430,16 @@
 
     function openProject(projectId) {
 
-      const project = projects[projectId];
+      const project =
+        projects[projectId];
 
-      if (!project) return;
+      if (!project) {
+        console.warn(
+          "Proyecto no encontrado:",
+          projectId
+        );
+        return;
+      }
 
 
       modalCategory.textContent =
@@ -1481,6 +1451,8 @@
       modalDescription.innerHTML =
         project.description;
 
+
+      /* TAGS */
 
       modalTags.innerHTML = "";
 
@@ -1500,24 +1472,47 @@
       }
 
 
+      /* VIDEO */
+
       modalVideo.innerHTML = "";
 
       if (project.video) {
 
-        modalVideo.innerHTML = `
-          <div class="modal-video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/${project.video}"
-              title="${project.title}"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-        `;
+        const videoWrapper =
+          document.createElement("div");
+
+        videoWrapper.className =
+          "modal-video-wrapper";
+
+        const iframe =
+          document.createElement("iframe");
+
+        iframe.src =
+          `https://www.youtube.com/embed/${project.video}`;
+
+        iframe.title =
+          project.title;
+
+        iframe.setAttribute(
+          "allow",
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        );
+
+        iframe.setAttribute(
+          "allowfullscreen",
+          ""
+        );
+
+        videoWrapper.appendChild(iframe);
+
+        modalVideo.appendChild(
+          videoWrapper
+        );
 
       }
 
+
+      /* LINKS */
 
       modalLinks.innerHTML = "";
 
@@ -1528,13 +1523,20 @@
           const a =
             document.createElement("a");
 
-          a.href = link.url;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
+          a.href =
+            link.url;
 
-          a.className = "project-more";
+          a.target =
+            "_blank";
 
-          a.textContent = link.text;
+          a.rel =
+            "noopener noreferrer";
+
+          a.className =
+            "project-more";
+
+          a.textContent =
+            link.text;
 
           modalLinks.appendChild(a);
 
@@ -1571,8 +1573,8 @@
       );
 
       /*
-        Detener el video al cerrar.
-        Esto evita que el audio siga reproduciéndose.
+        Eliminamos el iframe al cerrar para
+        detener completamente el video.
       */
 
       modalVideo.innerHTML = "";
@@ -1580,8 +1582,12 @@
     }
 
 
+    /* BOTONES DE PROYECTOS */
+
     document
-      .querySelectorAll(".project-more[data-project]")
+      .querySelectorAll(
+        ".project-more[data-project]"
+      )
       .forEach(button => {
 
         button.addEventListener(
@@ -1597,6 +1603,8 @@
 
       });
 
+
+    /* CERRAR */
 
     document
       .querySelector(".modal-close")
@@ -1628,36 +1636,47 @@
 
     /* =================================================
        ANIMACIONES AL HACER SCROLL
+       IMPORTANTE:
+       Si IntersectionObserver no está disponible,
+       el contenido sigue siendo visible.
     ================================================= */
 
-    const observer =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add(
-                "visible"
-              );
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.12
-        }
+    const revealElements =
+      document.querySelectorAll(
+        ".project-card, .strengths article, .tool-category"
       );
 
 
-    document
-      .querySelectorAll(
-        ".project-card, .strengths article, .tool-category"
-      )
-      .forEach(element => {
+    if ("IntersectionObserver" in window) {
+
+      const observer =
+        new IntersectionObserver(
+          entries => {
+
+            entries.forEach(entry => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            });
+
+          },
+          {
+            threshold: 0.08
+          }
+        );
+
+
+      revealElements.forEach(element => {
 
         element.classList.add("reveal");
 
@@ -1665,7 +1684,18 @@
 
       });
 
+    } else {
+
+      revealElements.forEach(element => {
+
+        element.classList.add("visible");
+
+      });
+
+    }
+
   </script>
 
 </body>
 </html>
+```
